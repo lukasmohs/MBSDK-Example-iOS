@@ -1,0 +1,11 @@
+/*
+ InfoPlist.strings
+ Copyright © 2019 Daimler AG. All rights reserved.
+ */
+
+"NSCameraUsageDescription"="Möchten Sie den Kamerazugriff autorisieren, um im Rahmen des Mercedes me-Aktivierungsprozesses Bild- und Videoaufnahmen machen zu können? Sie können diese Berechtigung später jederzeit in den App-Einstellungen widerrufen.";
+"NSFaceIDUsageDescription"="Verwenden Sie Face ID, um beispielsweise Ihr Fahrzeug zu entriegeln.";
+"NSLocationAlwaysAndWhenInUseUsageDescription"="Um Funktionen wie Fahrzeugortung oder Verkehrsinformationen zu nutzen, benötigt die App Ihre Standortdaten. Die Nutzung der Daten kann jederzeit über iOS Einstellungen->Datenschutz->Ortungsdienste deaktiviert werden.";
+"NSLocationUsageDescription"="Um Funktionen wie Fahrzeugortung oder Verkehrsinformationen zu nutzen, benötigt die App Ihre Standortdaten. Die Nutzung der Daten kann jederzeit über iOS Einstellungen->Datenschutz->Ortungsdienste deaktiviert werden.";
+"NSLocationWhenInUseUsageDescription"="Um Funktionen wie Fahrzeugortung oder Verkehrsinformationen zu nutzen, benötigt die App Ihre Standortdaten. Die Nutzung der Daten kann jederzeit über iOS Einstellungen->Datenschutz->Ortungsdienste deaktiviert werden.";
+"NSPhotoLibraryUsageDescription"="Wählen Sie ein Profilbild aus Ihrer Foto-Bibliothek aus.";

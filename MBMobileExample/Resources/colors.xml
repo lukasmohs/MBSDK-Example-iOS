@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+GENERATED - DO NOT MODIFY - use StringResGen instead.
+
+Created by StringResGen.
+-->
+<resources>
+	<color name="vehicle_status_gray">#B6B6B6</color>
+	<color name="vehicle_status_closed">#3E9F85</color>
+	<color name="vehicle_status_opened">#E45C5C</color>
+	<color name="vehicle_status_unknown">#FFFFFF</color>
+</resources>

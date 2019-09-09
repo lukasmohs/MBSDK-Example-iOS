@@ -1,0 +1,165 @@
+PODS:
+  - Alamofire (4.9.0)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - DarklyEventSource (4.0.2)
+  - JumioMobileSDK/Netverify (3.3.1)
+  - JWTDecode (2.3.0)
+  - KeychainAccess (3.2.0)
+  - LaunchDarkly (3.0.4):
+    - LaunchDarkly/Core (= 3.0.4)
+  - LaunchDarkly/Core (3.0.4):
+    - DarklyEventSource (~> 4.0.2)
+  - MBCarKit (1.0.0):
+    - MBCommonKit (~> 1.0)
+    - MBNetworkKit/Basic (~> 1.0)
+    - MBNetworkKit/Socket (~> 1.0)
+    - MBRealmKit/Layer (~> 1.0)
+    - SwiftProtobuf (~> 1.0)
+  - MBCommonKit (1.0.0):
+    - MBCommonKit/All (= 1.0.0)
+  - MBCommonKit/All (1.0.0):
+    - MBCommonKit/Logger
+    - MBCommonKit/Protocols
+    - MBCommonKit/Tracking
+  - MBCommonKit/Logger (1.0.0)
+  - MBCommonKit/Protocols (1.0.0)
+  - MBCommonKit/Tracking (1.0.0)
+  - MBDeeplinkKit (1.0.0):
+    - MBCommonKit (~> 1.0)
+    - MBNetworkKit/Basic (~> 1.0)
+    - MBRealmKit/Layer (~> 1.0)
+  - MBIngressKit (1.0.0):
+    - JWTDecode (~> 2.1)
+    - MBCommonKit/Logger (~> 1.0)
+    - MBCommonKit/Protocols (~> 1.0)
+    - MBNetworkKit/Basic (~> 1.0)
+    - MBNetworkKit/Image (~> 1.0)
+    - MBRealmKit/Layer (~> 1.0)
+  - MBMobileSDK (1.0.0):
+    - JumioMobileSDK/Netverify (~> 3.0)
+    - KeychainAccess (~> 3.1)
+    - LaunchDarkly (~> 3.0)
+    - MBCarKit (~> 1.0)
+    - MBCommonKit (~> 1.0)
+    - MBDeeplinkKit (~> 1.0)
+    - MBIngressKit (~> 1.0)
+    - MBNetworkKit (~> 1.0)
+    - MBRealmKit/UI (~> 1.0)
+    - MBSupportKit (~> 1.0)
+    - MBUIKit (~> 1.0)
+    - YandexMobileMetrica/Dynamic (~> 3.0)
+  - MBNetworkKit (1.0.0):
+    - MBNetworkKit/All (= 1.0.0)
+  - MBNetworkKit/All (1.0.0):
+    - MBNetworkKit/Basic
+    - MBNetworkKit/Image
+    - MBNetworkKit/Socket
+  - MBNetworkKit/Basic (1.0.0):
+    - Alamofire (~> 4.7)
+  - MBNetworkKit/Image (1.0.0):
+    - AlamofireImage (~> 3.3)
+    - MBNetworkKit/Basic
+  - MBNetworkKit/Socket (1.0.0):
+    - MBCommonKit/Logger (~> 1.0)
+    - Starscream (~> 3.0)
+  - MBRealmKit/Layer (1.0.0):
+    - MBCommonKit/Logger (~> 1.0)
+    - RealmSwift (~> 3.0)
+  - MBRealmKit/UI (1.0.0):
+    - MBCommonKit/Logger (~> 1.0)
+    - RealmSwift (~> 3.0)
+  - MBSupportKit (1.0.0):
+    - MBCommonKit (~> 1.0)
+    - MBNetworkKit/Basic (~> 1.0)
+  - MBUIKit (1.0.0):
+    - MBCommonKit/Logger (~> 1.0)
+    - MBUIKit/All (= 1.0.0)
+  - MBUIKit/All (1.0.0):
+    - MBCommonKit/Logger (~> 1.0)
+    - MBUIKit/Basic
+    - MBUIKit/Components
+    - MBUIKit/Widgets
+  - MBUIKit/Basic (1.0.0):
+    - MBCommonKit/Logger (~> 1.0)
+  - MBUIKit/Components (1.0.0):
+    - MBCommonKit/Logger (~> 1.0)
+    - MBUIKit/Basic
+  - MBUIKit/Widgets (1.0.0):
+    - MBCommonKit/Logger (~> 1.0)
+    - MBUIKit/Basic
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
+  - Starscream (3.1.0)
+  - SwiftGen (6.1.0)
+  - SwiftLint (0.35.0)
+  - SwiftProtobuf (1.6.0)
+  - YandexMobileMetrica/Dynamic (3.7.1):
+    - YandexMobileMetrica/Dynamic/Core (= 3.7.1)
+    - YandexMobileMetrica/Dynamic/Crashes (= 3.7.1)
+  - YandexMobileMetrica/Dynamic/Core (3.7.1)
+  - YandexMobileMetrica/Dynamic/Crashes (3.7.1):
+    - YandexMobileMetrica/Dynamic/Core
+
+DEPENDENCIES:
+  - MBMobileSDK (~> 1.0)
+  - SwiftGen (~> 6.0)
+  - SwiftLint (~> 0.30)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - DarklyEventSource
+    - JumioMobileSDK
+    - JWTDecode
+    - KeychainAccess
+    - LaunchDarkly
+    - MBCarKit
+    - MBCommonKit
+    - MBDeeplinkKit
+    - MBIngressKit
+    - MBMobileSDK
+    - MBNetworkKit
+    - MBRealmKit
+    - MBSupportKit
+    - MBUIKit
+    - Realm
+    - RealmSwift
+    - Starscream
+    - SwiftGen
+    - SwiftLint
+    - SwiftProtobuf
+    - YandexMobileMetrica
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  DarklyEventSource: 9cc7d4b162c7bb9e4d58b1194c403dfc5628b941
+  JumioMobileSDK: 109f70753a4df7039b054ae99c1e6778e2b87a58
+  JWTDecode: fb77675c8049c1a7e9433c7cf448c3ce33ee4ac7
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  LaunchDarkly: 0c213329f223a6ba7dff104857266758ea6e7ece
+  MBCarKit: 0adc4d8209d329db2ea9177ee7211db6f44e54cd
+  MBCommonKit: 168b24b2320ad9f816fb4732aef87b272322bc1e
+  MBDeeplinkKit: f5b9aa18f6a3b3bc07f9c33b87ffb35b77ed50ca
+  MBIngressKit: 1f0eedcf6cfc40cd7f99eca25b881016aa9edba2
+  MBMobileSDK: 63747e0be6e4b6dd486b85857eae3153ee39bbb5
+  MBNetworkKit: 372c6ed6def49641ccc8ca3ea42f0d41e8f9df2e
+  MBRealmKit: b294eb49c38b152047517074b813234736002714
+  MBSupportKit: a8fe6c98004429268d0a6f9412ad3c3bbf3c449b
+  MBUIKit: 38c5bedc396b405986ce6c2cddffe9b1ec846720
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
+  SwiftProtobuf: e905ca1366405696411aaf174411c4b19c0ef73d
+  YandexMobileMetrica: 95e93ee5af38520c9e470533dc8df6cf72fa171d
+
+PODFILE CHECKSUM: 2ab6bc24859e609ec80dafb7b5c7eeef56359483
+
+COCOAPODS: 1.7.5

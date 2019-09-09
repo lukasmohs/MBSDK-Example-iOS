@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="1ZN-KB-EWS">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="wCT-eg-6bI" customClass="HomeViewController" customModule="MBMobileExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="56Z-FV-wCh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2r5-aN-MRz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fl2-21-98M">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uFz-DO-rGW">
+                                        <rect key="frame" x="16" y="0.0" width="288" height="988"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iEG-gz-1Z0" customClass="CommandDoorView" customModule="MBMobileExample" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="250" constant="200" id="KLi-mX-nUG"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t15-uX-TNZ" customClass="CarImageView" customModule="MBMobileExample" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="216" width="288" height="158"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="t15-uX-TNZ" secondAttribute="height" multiplier="292:160" priority="999" id="vo5-pg-Jze"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1z3-5g-6Tg" customClass="CarStatusView" customModule="MBMobileExample" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="390" width="288" height="598"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="750" constant="598" id="LUh-WF-jcG"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Fl2-21-98M" firstAttribute="leading" secondItem="2r5-aN-MRz" secondAttribute="leading" id="1Mm-Ie-VdK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fl2-21-98M" secondAttribute="trailing" id="3G5-NX-mCw"/>
+                                    <constraint firstAttribute="bottom" secondItem="uFz-DO-rGW" secondAttribute="bottom" priority="250" id="CKV-Ge-7x9"/>
+                                    <constraint firstAttribute="trailing" secondItem="uFz-DO-rGW" secondAttribute="trailing" constant="16" id="GnF-kX-MNi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fl2-21-98M" secondAttribute="bottom" id="fTZ-Us-aqn"/>
+                                    <constraint firstItem="Fl2-21-98M" firstAttribute="top" secondItem="2r5-aN-MRz" secondAttribute="top" id="vcF-KH-5eK"/>
+                                    <constraint firstItem="uFz-DO-rGW" firstAttribute="leading" secondItem="2r5-aN-MRz" secondAttribute="leading" constant="16" id="wOA-bt-ngj"/>
+                                    <constraint firstItem="uFz-DO-rGW" firstAttribute="top" secondItem="2r5-aN-MRz" secondAttribute="top" id="yLt-Hb-ebT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2r5-aN-MRz" firstAttribute="top" secondItem="56Z-FV-wCh" secondAttribute="top" id="34j-Z9-saW"/>
+                            <constraint firstItem="2r5-aN-MRz" firstAttribute="bottom" secondItem="56Z-FV-wCh" secondAttribute="bottom" id="9Xw-sF-qUu"/>
+                            <constraint firstItem="Fl2-21-98M" firstAttribute="width" secondItem="56Z-FV-wCh" secondAttribute="width" id="AWy-d5-xMc"/>
+                            <constraint firstItem="Fl2-21-98M" firstAttribute="height" secondItem="56Z-FV-wCh" secondAttribute="height" id="YHy-mB-9YZ"/>
+                            <constraint firstAttribute="trailing" secondItem="2r5-aN-MRz" secondAttribute="trailing" id="cah-fE-YFY"/>
+                            <constraint firstItem="2r5-aN-MRz" firstAttribute="leading" secondItem="56Z-FV-wCh" secondAttribute="leading" id="h1z-1p-d8w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1O8-4g-1qP"/>
+                    </view>
+                    <connections>
+                        <outlet property="carImageView" destination="t15-uX-TNZ" id="ZV0-kt-QY3"/>
+                        <outlet property="carStatusView" destination="1z3-5g-6Tg" id="jdl-9Q-Pbu"/>
+                        <outlet property="commandDoorView" destination="iEG-gz-1Z0" id="giH-PR-rt7"/>
+                        <outlet property="contentStackView" destination="uFz-DO-rGW" id="4NP-GX-caI"/>
+                        <outlet property="scrollView" destination="2r5-aN-MRz" id="EWg-VO-VEl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUK-p3-1r3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="101"/>
+        </scene>
+    </scenes>
+</document>

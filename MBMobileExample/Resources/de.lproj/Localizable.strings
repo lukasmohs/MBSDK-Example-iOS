@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Copyright © 2019 Daimler AG. All rights reserved.
+*/
+
+"attributes_doors_title"="Attributes Doors";
+"attributes_doors_front_left"="front left";
+"attributes_doors_front_right"="front right";
+"attributes_doors_rear_left"="rear left";
+"attributes_doors_rear_right"="rear right";
+"attributes_doors_decklid"="decklid";
+"attributes_doors_door_state"="door state";
+"attributes_doors_lock_state"="lock state";
+"attributes_doors_state"="state";
+"attributes_tank_title"="Attributes Tank";
+"attributes_tank_electric_percent"="elect.percent";
+"attributes_tank_electric_range"="elect.range";
+"attributes_tank_gas_percent"="gas percent";
+"attributes_tank_gas_range"="gas range";
+"attributes_tank_liquid_percent"="liquid percent";
+"attributes_tank_liquid_range"="liquid range";
+"command_doors_title"="Command Doors";
+"command_lock"="Lock";
+"command_unlock"="Unlock";
+"command_errors"="errors:";
+"command_process_id"="processId:";
+"command_state"="state:";
+"command_timestamp"="timestamp:";
+"send_command_error"="Bitte verknüpfen Sie zunächst ein Fahrzeug, um diese Funktion nutzen zu können.";

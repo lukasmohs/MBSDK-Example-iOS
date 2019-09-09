@@ -1,0 +1,11 @@
+/*
+ InfoPlist.strings
+ Copyright © 2019 Daimler AG. All rights reserved.
+ */
+
+"NSCameraUsageDescription"="Would you like to authorize the application for camera access in order to be able to make image and video recordings within the Mercedes me activation process? You can revoke this permission later at any time in the App settings.";
+"NSFaceIDUsageDescription"="To use features such as car unlock, you can use Face ID to authenticate.";
+"NSLocationAlwaysAndWhenInUseUsageDescription"="To use functions such as Vehicle Tracker or Traffic Information, the app needs your location data. The use of data can be deactivated at any time via iOS Settings->Privacy->Location Services.";
+"NSLocationUsageDescription"="To use functions such as Vehicle Tracker or Traffic Information, the app needs your location data. The use of data can be deactivated at any time via iOS Settings->Privacy->Location Services.";
+"NSLocationWhenInUseUsageDescription"="Get your current location.To use functions such as Vehicle Tracker or Traffic Information, the app needs your location data. The use of data can be deactivated at any time via iOS Settings->Privacy->Location Services.";
+"NSPhotoLibraryUsageDescription"="Choose a profile-picture from your foto-library.";

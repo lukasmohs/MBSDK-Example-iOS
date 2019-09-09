@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommandDoorView" customModule="MBMobileExample" customModuleProvider="target">
+            <connections>
+                <outlet property="errorView" destination="D2Q-xY-r80" id="5MX-yX-m8l"/>
+                <outlet property="startButton" destination="rcJ-NJ-HSm" id="8bs-Zf-0g9"/>
+                <outlet property="stateView" destination="3LM-Ca-jD4" id="WcK-Gm-VLc"/>
+                <outlet property="stopButton" destination="bsQ-iU-sPY" id="Sqs-q4-PbX"/>
+                <outlet property="timestampView" destination="dsV-cG-HYn" id="04e-bD-uOh"/>
+                <outlet property="titleLabel" destination="dGI-o8-52Z" id="KEw-zJ-c6x"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="205"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGI-o8-52Z" customClass="MBHeadline5Label" customModule="MBUIKit">
+                    <rect key="frame" x="35" y="0.0" width="230" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7K-be-K0Q" customClass="MBGradientSeparatorView" customModule="MBUIKit">
+                    <rect key="frame" x="35" y="32" width="230" height="1"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="230" id="CRl-Th-njN"/>
+                        <constraint firstAttribute="height" constant="1" id="KTV-t5-5EW"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nk2-1U-Djy">
+                    <rect key="frame" x="56" y="57" width="188" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcJ-NJ-HSm" customClass="MBPrimaryButton" customModule="MBUIKit">
+                            <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="999" constant="90" id="d7y-DG-qei"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsQ-iU-sPY" customClass="MBPrimaryButton" customModule="MBUIKit">
+                            <rect key="frame" x="98" y="0.0" width="90" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="999" constant="90" id="sUU-f4-tRc"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="aeO-7L-8Mi"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2qT-ls-dYE">
+                    <rect key="frame" x="0.0" y="117" width="300" height="88"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3jN-XU-cBb">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2Q-xY-r80" customClass="ValueView" customModule="MBMobileExample" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="142" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LM-Ca-jD4" customClass="ValueView" customModule="MBMobileExample" customModuleProvider="target">
+                                    <rect key="frame" x="158" y="0.0" width="142" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="999" constant="44" id="1sj-hy-qEZ"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="l9t-9j-ilk">
+                            <rect key="frame" x="0.0" y="44" width="300" height="44"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsV-cG-HYn" customClass="ValueView" customModule="MBMobileExample" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="l9t-9j-ilk" firstAttribute="height" secondItem="3jN-XU-cBb" secondAttribute="height" priority="999" id="nxY-Cl-daq"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dGI-o8-52Z" firstAttribute="leading" secondItem="g7K-be-K0Q" secondAttribute="leading" id="HN0-lI-hgA"/>
+                <constraint firstAttribute="bottom" secondItem="2qT-ls-dYE" secondAttribute="bottom" id="KfX-Cg-JdG"/>
+                <constraint firstItem="dGI-o8-52Z" firstAttribute="trailing" secondItem="g7K-be-K0Q" secondAttribute="trailing" id="NDa-2J-qSV"/>
+                <constraint firstItem="Nk2-1U-Djy" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Q85-SB-Ocl"/>
+                <constraint firstItem="2qT-ls-dYE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Uup-k9-9ea"/>
+                <constraint firstItem="Nk2-1U-Djy" firstAttribute="top" secondItem="g7K-be-K0Q" secondAttribute="bottom" constant="24" id="WWJ-TW-g49"/>
+                <constraint firstItem="g7K-be-K0Q" firstAttribute="top" secondItem="dGI-o8-52Z" secondAttribute="bottom" constant="8" id="Wa4-5P-mtd"/>
+                <constraint firstItem="2qT-ls-dYE" firstAttribute="top" secondItem="Nk2-1U-Djy" secondAttribute="bottom" constant="16" id="fah-BE-bz0"/>
+                <constraint firstItem="dGI-o8-52Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ifs-GO-ECK"/>
+                <constraint firstAttribute="trailing" secondItem="2qT-ls-dYE" secondAttribute="trailing" id="qwe-xC-FhL"/>
+                <constraint firstItem="g7K-be-K0Q" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wNx-wl-5Vk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="101.25" y="134.1549295774648"/>
+        </view>
+    </objects>
+</document>

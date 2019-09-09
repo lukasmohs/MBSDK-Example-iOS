@@ -1,0 +1,36 @@
+input_dir: MBMobileExample/Resources
+output_dir: MBMobileExample/Generated/SwiftGen
+
+colors:
+  - inputs: colors.xml
+    outputs:
+      templateName: swift4
+      output: Colors.swift
+      
+ib:
+  - inputs: Storyboards
+    outputs:
+    - templateName: scenes-swift4
+      output: Scenes.swift
+      params:
+        ignoreTargetModule: true
+    - templateName: segues-swift4
+      output: Segues.swift
+
+plist:
+  - inputs: ../../Pods/Target Support Files/Pods-MBMobileExample/Pods-MBMobileExample-acknowledgements.plist
+    outputs:
+      templatePath: SwiftGen/inline-swift4-fixed.stencil
+      output: Acknowledgements.swift
+
+strings:
+  inputs: [de.lproj/Localizable.strings]
+  outputs:
+    templateName: structured-swift4
+    output: Localizations.swift
+
+xcassets:
+  - inputs: Assets.xcassets
+    outputs:
+      templateName: swift4
+      output: Assets.swift
