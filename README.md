@@ -30,7 +30,7 @@
 
 ### Step 3. Start development
 
-Check our next guide about [setting up the SDK](setting_up_sdk.md).
+Check our next guide about [setting up the SDK](https://developer.mercedes-benz.com/sdks/ios/guides/setting_up_sdk).
 
 ## Code of Conduct
 
