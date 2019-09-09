@@ -17,14 +17,14 @@ class MBMobileSDKConfigurationHelper {
 													 isStageSelectorEnabled: false,
 													 ldssoAppId: "",
 													 ldssoAppVersion: "",
-													 stageEndpoint: .mock,
+													 stageEndpoint: .prod,
 													 stageRegion: .ece)
         configuration.mbMobileSDKPushHub = .store
 		#elseif DEBUG
 		var configuration = MBMobileSDKConfiguration(applicationIdentifier: Constants.applicationIdentifier,
 													 appGroupIdentifier: .custom(""),
 													 clientId: "",
-													 isStageSelectorEnabled: false,
+													 isStageSelectorEnabled: true,
 													 ldssoAppId: "",
 													 ldssoAppVersion: "",
 													 stageEndpoint: .mock,
