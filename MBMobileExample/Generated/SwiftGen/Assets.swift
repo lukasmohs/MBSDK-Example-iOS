@@ -48,6 +48,12 @@ internal enum Asset {
   internal static let carWithoutDoors = ImageAsset(name: "car_without_doors")
   internal static let leaf = ImageAsset(name: "leaf")
   internal static let mainBg = ImageAsset(name: "main-bg")
+  internal static let nature = ImageAsset(name: "nature")
+  internal static let roundCallMade = ImageAsset(name: "round_call_made")
+  internal static let roundEco = ImageAsset(name: "round_eco")
+  internal static let roundLoop = ImageAsset(name: "round_loop")
+  internal static let roundMonetization = ImageAsset(name: "round_monetization")
+  internal static let roundOutlinedFlag = ImageAsset(name: "round_outlined_flag")
   internal static let zetsche = ImageAsset(name: "zetsche")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

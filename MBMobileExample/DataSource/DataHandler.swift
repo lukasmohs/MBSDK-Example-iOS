@@ -21,4 +21,20 @@ struct Trip {
     let tripData: [DataPoint]
 }
 
+var trips: [Trip] = []
 
+class DataHandler {
+    
+    static func initTripData() {
+        
+        var tripData: [DataPoint] = []
+        //    let vehicleLocationModel = VehicleLocationModel()
+        //    VehicleLocationModel.heading
+        //    tripData.append(DataPoint(timeStamp: Date(), location: VehicleLocationModel(), ecoScore: VehicleEcoScoreModel()))
+        //
+        //    var trip = Trip(name: "Monday Morning", tripData: tripData)
+        //    trips.append(trip)
+    }
+    
+
+}

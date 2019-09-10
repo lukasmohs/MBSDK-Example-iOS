@@ -29,6 +29,28 @@ class HomeViewController: UIViewController {
 
 	
 	// MARK: - View Lifecycle
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        /// add observer
+        Notification.Name.didChangeVehicleSelection.add(self, selector: #selector(self.didChangeVehicleSelection(notification:)))
+        
+        //self.setupScrollView()
+        
+        DataHandler.initTripData()
+        
+        self.observeVehicleStatus()
+        self.didChangeVehicleSelection(notification: nil)
+        
+        self.configureCommandDoors()
+        
+        startCountingCO2()
+        setupProfileView()
+        addBadgesToView()
+        setupSavingsView()
+    }
 	
     func setupProfileView() {
         let image = UIImage(named: "zetsche")
@@ -101,26 +123,6 @@ class HomeViewController: UIViewController {
         badgeStackView.addArrangedSubview(spacerView)
         
     }
-    
-	override func viewDidLoad() {
-		super.viewDidLoad()
-    
-		/// add observer
-		Notification.Name.didChangeVehicleSelection.add(self, selector: #selector(self.didChangeVehicleSelection(notification:)))
-		
-		//self.setupScrollView()
-    
-		
-		self.observeVehicleStatus()
-		self.didChangeVehicleSelection(notification: nil)
-		
-		self.configureCommandDoors()
-        
-        startCountingCO2()
-        setupProfileView()
-        addBadgesToView()
-        setupSavingsView()
-	}
     
     @IBAction func gotoLiveViewButtonClicked(_ sender: Any) {
         self.performSegue(withIdentifier: "showLiveView", sender: self)
