@@ -17,6 +17,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var chartView: Chart!
+    @IBOutlet weak var gradientView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,13 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
          series.color = ChartColors.greenColor()
         chartView.add(series)
         
+    }
+    
+    func addGradientView() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.yellow.cgColor, UIColor.white.cgColor]
+        gradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     func drawPolyline() {
