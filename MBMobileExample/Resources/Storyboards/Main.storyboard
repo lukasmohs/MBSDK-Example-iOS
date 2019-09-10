@@ -604,6 +604,7 @@
                     </view>
                     <connections>
                         <outlet property="chartView" destination="Qsg-go-EUk" id="IHs-Nm-bzI"/>
+                        <outlet property="mapView" destination="Am9-Sz-ovA" id="YjR-78-NTO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pg-8T-zp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
