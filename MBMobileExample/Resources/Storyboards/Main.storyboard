@@ -532,9 +532,29 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNZ-T5-KBK">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFH-4m-0eP" userLabel="dateLabel">
+                                                <rect key="frame" x="20" y="20" width="280" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Am9-Sz-ovA">
+                                                <rect key="frame" x="20" y="49" width="280" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="EL0-R1-GXB"/>
+                                                </constraints>
+                                            </mapView>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="Am9-Sz-ovA" firstAttribute="top" secondItem="SFH-4m-0eP" secondAttribute="bottom" constant="8" id="6jQ-nP-vWB"/>
+                                            <constraint firstAttribute="trailing" secondItem="SFH-4m-0eP" secondAttribute="trailing" constant="20" id="I5k-Qi-DsL"/>
+                                            <constraint firstItem="SFH-4m-0eP" firstAttribute="top" secondItem="aNZ-T5-KBK" secondAttribute="top" constant="20" id="LDb-eF-Qa9"/>
                                             <constraint firstAttribute="height" constant="800" id="ZIO-a9-ZfC"/>
+                                            <constraint firstItem="Am9-Sz-ovA" firstAttribute="leading" secondItem="aNZ-T5-KBK" secondAttribute="leading" constant="20" id="nh7-87-eot"/>
+                                            <constraint firstItem="SFH-4m-0eP" firstAttribute="leading" secondItem="aNZ-T5-KBK" secondAttribute="leading" constant="20" id="tyP-kb-qjB"/>
+                                            <constraint firstAttribute="trailing" secondItem="Am9-Sz-ovA" secondAttribute="trailing" constant="20" id="uwh-8o-XBf"/>
                                         </constraints>
                                     </view>
                                 </subviews>

@@ -96,6 +96,7 @@ PODS:
   - RealmSwift (3.17.3):
     - Realm (= 3.17.3)
   - Starscream (3.1.0)
+  - SwiftChart (1.0.1)
   - SwiftGen (6.1.0)
   - SwiftLint (0.35.0)
   - SwiftProtobuf (1.6.0)
@@ -110,6 +111,7 @@ DEPENDENCIES:
   - ABGaugeViewKit
   - EFCountingLabel
   - MBMobileSDK (~> 1.0)
+  - SwiftChart
   - SwiftGen (~> 6.0)
   - SwiftLint (~> 0.30)
 
@@ -136,6 +138,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - Starscream
+    - SwiftChart
     - SwiftGen
     - SwiftLint
     - SwiftProtobuf
@@ -163,11 +166,12 @@ SPEC CHECKSUMS:
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
   Starscream: 08172b481e145289c4930cb567230fb55897cfa4
+  SwiftChart: ba767a678d568a5ee22d419e146a0582865e1aff
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
   SwiftProtobuf: e905ca1366405696411aaf174411c4b19c0ef73d
   YandexMobileMetrica: 95e93ee5af38520c9e470533dc8df6cf72fa171d
 
-PODFILE CHECKSUM: 850e0dc7b615765f6ef0c6d0918b01de7d544d19
+PODFILE CHECKSUM: ffd152fd0622c7390fd6fb6fa43dfef442abd20c
 
 COCOAPODS: 1.7.2
