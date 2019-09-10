@@ -11,6 +11,7 @@ def pods
   pod 'SwiftLint', '~> 0.30'
   pod 'EFCountingLabel'
   pod 'ABGaugeViewKit'
+  pod 'SwiftChart'
   # data
     
   # layout / ui

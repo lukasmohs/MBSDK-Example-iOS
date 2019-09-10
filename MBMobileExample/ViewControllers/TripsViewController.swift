@@ -13,6 +13,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var tripsTableView: UITableView!
     
+    var segueIndex = -1
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -25,10 +27,21 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "My Trips"
         tripsTableView.tableFooterView = UIView()
         tripsTableView.dataSource = self
         tripsTableView.delegate =  self
-        
     }
     
+    func tableView(_ tableView: UITableView,  didSelectRowAt indexPath: IndexPath) {
+         self.performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let nextViewController = segue.destination as? TripDetailViewController {
+                nextViewController.trip = nil
+            }
+        }
+    }
 }

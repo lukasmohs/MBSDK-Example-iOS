@@ -72,7 +72,8 @@ class HomeViewController: UIViewController {
         co2SavingsLabel.setUpdateBlock { value, label in
             label.text = String(format: "%.1f%", value)
         }
-        co2SavingsLabel.countFrom(1, to: 1000, withDuration: 2.0)
+        let savings = 1000 + Int.random(in: 0 ... 1000)
+        co2SavingsLabel.countFrom(1, to: CGFloat(savings), withDuration: 2.0)
     }
     
     func addBadgesToView() {
