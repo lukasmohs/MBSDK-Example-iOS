@@ -32,10 +32,10 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     
     func setUpChart(dataPoints: [DataPoint]) {
 
-        var const:[Double] = []
-        var freeWhl:[Double] = []
-        var bonusRange:[Double] = []
-        var accel:[Double] = []
+        var const: [Double] = []
+        var freeWhl: [Double] = []
+        var bonusRange: [Double] = []
+        var accel: [Double] = []
         var total:[Double] = []
         
         for dataPoint in dataPoints {
@@ -70,7 +70,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     func addGradientView() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = gradientView.bounds
-        gradientLayer.colors = [UIColor.green.cgColor, UIColor.red.cgColor]
+        gradientLayer.colors = [UIColor.Ridebee.BestGreen, UIColor.Ridebee.BadGreen]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradientView.layer.insertSublayer(gradientLayer, at: 0)
@@ -126,7 +126,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     }
     
     func getColorForEcoScore(score: Int) -> UIColor{
-        var percentage: Double = Double(score) / 100
-        return UIColor(red: CGFloat(1-percentage), green: CGFloat(percentage), blue: 0, alpha: 1)
+        let percentage: Double = Double(score / 2) / 100 + 50
+        return UIColor(red: 0, green: CGFloat(percentage), blue: 0, alpha: 1)
     }
 }
