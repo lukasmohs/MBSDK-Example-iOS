@@ -39,8 +39,6 @@ class HomeViewController: UIViewController {
         
         //self.setupScrollView()
         
-        DataHandler.initTripData()
-        
         self.observeVehicleStatus()
         self.didChangeVehicleSelection(notification: nil)
         

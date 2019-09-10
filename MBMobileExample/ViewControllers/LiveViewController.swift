@@ -51,12 +51,53 @@ class LiveViewController: UIViewController {
                 }
                 print("Eco score total: \(ecoScoreTotalValue)")
                 self?.speedometerView.needleValue = CGFloat(ecoScoreTotalValue)
+                let location = socketObservable.location.current
+                DataHandler.shared.addNewDataPoint(location: location, ecoScore: ecoScore)
             case .initial(let ecoScore):
                 guard let ecoScoreTotalValue = ecoScore.total.value else {
                     return
                 }
                 print("Eco score total initial: \(ecoScoreTotalValue)")
                 self?.speedometerView.needleValue = CGFloat(ecoScoreTotalValue)
+                let location = socketObservable.location.current
+                DataHandler.shared.addNewDataPoint(location: location, ecoScore: ecoScore)
+            }
+        }.add(to: &self.disposal)
+
+        socketObservable.location.observe { [weak self] (state) in
+            switch state {
+            case .updated(let location):
+                let ecoScore = socketObservable.ecoScore.current
+                DataHandler.shared.addNewDataPoint(location: location, ecoScore: ecoScore)
+                print("----- Location ------")
+                print(location.latitude)
+            case .initial(let location):
+                let ecoScore = socketObservable.ecoScore.current
+                DataHandler.shared.addNewDataPoint(location: location, ecoScore: ecoScore)
+            }
+        }.add(to: &self.disposal)
+
+        socketObservable.engine.observe { [weak self] (state) in
+            switch state {
+            case .updated(let engine):
+                guard let engineState = engine.state.value else {
+                    print("[Error]: Engine state value is nil")
+                    return
+                }
+                if engineState == .stopped {
+                    guard let currentTrip = DataHandler.shared.getCurrentTrip() else {
+                        return
+                    }
+                    for dataPoint in currentTrip.tripData {
+                        print("[\(dataPoint.timeStamp)]" + "  \(dataPoint.location.latitude.value)/\(dataPoint.location.longitude.value)")
+                    }
+                    DataHandler.shared.finishCurrentTrip()
+                    print("Number of trips: \(DataHandler.shared.getAllTrips()[0])")
+                } else {
+                    DataHandler.shared.startNewTrip(name: "Test Trip")
+                }
+            case .initial(let engine):
+                print("Engine initial state")
             }
         }.add(to: &self.disposal)
     }

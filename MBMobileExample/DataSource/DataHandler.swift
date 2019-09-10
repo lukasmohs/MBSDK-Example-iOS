@@ -28,18 +28,19 @@ class DataHandler {
     static let shared = DataHandler()
     
     func startNewTrip( name: String ) {
-        currentTrip = Trip( name: name, tripData: [] )
+        self.currentTrip = Trip( name: name, tripData: [] )
     }
     
     func finishCurrentTrip() {
-        guard let currentTrip = currentTrip else {
+        guard let currentTrip = self.currentTrip else {
             return
         }
         trips.append(currentTrip)
     }
     
     func addNewDataPoint( location: VehicleLocationModel, ecoScore: VehicleEcoScoreModel ) {
-        guard var currentTrip = currentTrip else {
+        guard var currentTrip = self.currentTrip else {
+            print("[Error] Current trip is nil")
             return
         }
         currentTrip.tripData.append(DataPoint(timeStamp: Date(), location: location, ecoScore: ecoScore))
