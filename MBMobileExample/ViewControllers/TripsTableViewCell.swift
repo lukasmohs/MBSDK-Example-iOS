@@ -36,11 +36,11 @@ class TripsTableViewCell: UITableViewCell {
     
     func setTestDetails(trip: Trip) {
         
-        let origin: String = String(trip.tripData[0].location.latitude) + ", " + String(trip.tripData[0].location.longitude)
-        let destination: String = String(trip.tripData[trip.tripData.count-1].location.latitude) + ", " + String(trip.tripData[trip.tripData.count-1].location.longitude)
-        
-        originLabel?.text = origin
-        destinationLabel?.text = destination
+//        let origin: String = String(trip.tripData[0].location.latitude) + ", " + String(trip.tripData[0].location.longitude)
+//        let destination: String = String(trip.tripData[trip.tripData.count-1].location.latitude) + ", " + String(trip.tripData[trip.tripData.count-1].location.longitude)
+//        
+        originLabel?.text = trip.origin
+        destinationLabel?.text = trip.destination
         carLabel?.text = "Benz AMG - 63 coupé"
         
         dateLabel.text = trip.getHoursAndMinutesFromDate()
