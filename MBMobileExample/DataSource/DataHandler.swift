@@ -39,11 +39,11 @@ class DataHandler {
     }
     
     func addNewDataPoint( location: VehicleLocationModel, ecoScore: VehicleEcoScoreModel ) {
-        guard var currentTrip = self.currentTrip else {
+        if self.currentTrip == nil {
             print("[Error] Current trip is nil")
             return
         }
-        currentTrip.tripData.append(DataPoint(timeStamp: Date(), location: location, ecoScore: ecoScore))
+        self.currentTrip!.tripData.append(DataPoint(timeStamp: Date(), location: location, ecoScore: ecoScore))
     }
     
     func getAllTrips() -> [Trip] {
