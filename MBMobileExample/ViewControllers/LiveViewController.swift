@@ -7,16 +7,81 @@
 //
 
 import Foundation
-
-
-import Foundation
 import UIKit
+import MBMobileSDK
+import MBCarKit
+import ABGaugeViewKit
 
 class LiveViewController: UIViewController {
+
+    private var disposal = Disposal()
+    private var token: MyCarSocketNotificationToken?
     
+    @IBOutlet weak var speedometerView: ABGaugeView!
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        Notification.Name.didChangeVehicleSelection.add(self, selector: #selector(self.didChangeVehicleSelection(notification:)))
+        self.observeVehicleStatus()
+        self.didChangeVehicleSelection(notification: nil)
+    }
+
+    deinit {
+        LOG.V()
+
+        /// remove observer
+        Notification.Name.didChangeVehicleSelection.remove(self)
+
+        /// stop observer
+        self.disposal.removeAll()
+        MBCarKit.socketService.unregisterAndDisconnectIfPossible(token: self.token)
+    }
+
+    /// Starts oberserving some data from the socket
+    private func handle(socketObservable: SocketObservableProtocol) {
+        socketObservable.ecoScore.observe { [weak self] (state) in
+            switch state {
+            case .updated(let ecoScore):
+                guard let ecoScoreTotalValue = ecoScore.total.value else {
+                    return
+                }
+                print("Eco score total: \(ecoScoreTotalValue)")
+                self?.speedometerView.needleValue = CGFloat(ecoScoreTotalValue)
+            case .initial(let ecoScore):
+                guard let ecoScoreTotalValue = ecoScore.total.value else {
+                    return
+                }
+                print("Eco score total initial: \(ecoScoreTotalValue)")
+                self?.speedometerView.needleValue = CGFloat(ecoScoreTotalValue)
+            }
+        }.add(to: &self.disposal)
+    }
+
+    /// Example implementation how to create the connection and observes the status of the vehicle
+    private func observeVehicleStatus() {
+
+        // Connect the MyCar SocketService to the socket
+        let socketStateTupel = MBCarKit.socketService.connect(notificationTokenCreated: { [weak self] notificationToken in
+
+            // Token that will be used to remove the socket connection
+            self?.token = notificationToken
+            }, socketConnectionState: { (_) in
+
+                // Handle the connection state of the socket
+        })
+
+        // Handle the possible obervable socket data
+        self.handle(socketObservable: socketStateTupel.socketObservable)
+    }
+
+    @objc private func didChangeVehicleSelection(notification: Notification?) {
+
+        guard let vehicleStatusModel = notification?.object as? VehicleStatusModel else {
+            return
+        }
     }
 }

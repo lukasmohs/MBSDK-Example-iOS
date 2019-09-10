@@ -1,4 +1,5 @@
 PODS:
+  - ABGaugeViewKit (1.0.1)
   - Alamofire (4.9.0)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
@@ -105,12 +106,14 @@ PODS:
     - YandexMobileMetrica/Dynamic/Core
 
 DEPENDENCIES:
+  - ABGaugeViewKit
   - MBMobileSDK (~> 1.0)
   - SwiftGen (~> 6.0)
   - SwiftLint (~> 0.30)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - ABGaugeViewKit
     - Alamofire
     - AlamofireImage
     - DarklyEventSource
@@ -136,6 +139,7 @@ SPEC REPOS:
     - YandexMobileMetrica
 
 SPEC CHECKSUMS:
+  ABGaugeViewKit: b69c855c2878e5ba49605b0662d409c1577ed198
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   DarklyEventSource: 9cc7d4b162c7bb9e4d58b1194c403dfc5628b941
@@ -160,6 +164,6 @@ SPEC CHECKSUMS:
   SwiftProtobuf: e905ca1366405696411aaf174411c4b19c0ef73d
   YandexMobileMetrica: 95e93ee5af38520c9e470533dc8df6cf72fa171d
 
-PODFILE CHECKSUM: 2ab6bc24859e609ec80dafb7b5c7eeef56359483
+PODFILE CHECKSUM: 839bddcde2189de9f72bc9333550dc5cb6dff7f3
 
 COCOAPODS: 1.7.5

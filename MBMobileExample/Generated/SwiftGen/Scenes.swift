@@ -14,13 +14,16 @@ import UIKit
 internal enum StoryboardScene {
   internal enum LaunchScreen: StoryboardType {
     internal static let storyboardName = "LaunchScreen"
-
-    internal static let initialScene = InitialSceneType<UIKit.UIViewController>(storyboard: LaunchScreen.self)
   }
   internal enum Main: StoryboardType {
     internal static let storyboardName = "Main"
 
     internal static let homeViewController = SceneType<HomeViewController>(storyboard: Main.self, identifier: "HomeViewController")
+  }
+  internal enum Speedometer: StoryboardType {
+    internal static let storyboardName = "Speedometer"
+
+    internal static let initialScene = InitialSceneType<LiveViewController>(storyboard: Speedometer.self)
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name

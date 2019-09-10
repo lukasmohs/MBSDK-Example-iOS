@@ -13,7 +13,7 @@ class MBMobileSDKConfigurationHelper {
 		#if RELEASE
 		var configuration = MBMobileSDKConfiguration(applicationIdentifier: Constants.applicationIdentifier,
 													 appGroupIdentifier: .custom(""),
-													 clientId: "",
+													 clientId: "402fe401-3d14-41ff-81dd-6e5cab5576b9",
 													 isStageSelectorEnabled: false,
 													 ldssoAppId: "",
 													 ldssoAppVersion: "",

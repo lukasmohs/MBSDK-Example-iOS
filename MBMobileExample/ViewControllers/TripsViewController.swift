@@ -26,4 +26,5 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
     }
+    
 }

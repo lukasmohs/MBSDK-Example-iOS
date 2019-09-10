@@ -248,6 +248,13 @@ class HomeViewController: UIViewController {
 				self?.carImageView.update(vehicle: vehicle)
 			}
 		}.add(to: &self.disposal)
+
+        /*socketObservable.statistics.observe { [weak self] (state) in
+            switch state {
+            case .initial(let statistics):
+
+            }
+        }*/
 	}
 	
     /// Example implementation how to create the connection and observes the status of the vehicle

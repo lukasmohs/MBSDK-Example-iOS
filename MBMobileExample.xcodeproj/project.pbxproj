@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B31C542327CC0F00E95728 /* Speedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B31C532327CC0F00E95728 /* Speedometer.storyboard */; };
+		27B31C572327CDD600E95728 /* SDKHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B31C562327CDD600E95728 /* SDKHandler.swift */; };
+		27D70BFA2327F82F0049940B /* BadgeCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D70BF82327F82F0049940B /* BadgeCard.xib */; };
+		27D70BFB2327F82F0049940B /* BadgeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D70BF92327F82F0049940B /* BadgeCard.swift */; };
 		31579BBC2327C556005EC3EB /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31579BBB2327C556005EC3EB /* TripsViewController.swift */; };
 		31579BBE2327C7EB005EC3EB /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31579BBD2327C7EB005EC3EB /* LiveViewController.swift */; };
 		991B4315230189F1003D4B26 /* CarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B4313230189F1003D4B26 /* CarImageView.swift */; };
@@ -40,6 +44,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27B31C532327CC0F00E95728 /* Speedometer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speedometer.storyboard; sourceTree = "<group>"; };
+		27B31C562327CDD600E95728 /* SDKHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKHandler.swift; sourceTree = "<group>"; };
+		27D70BF82327F82F0049940B /* BadgeCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeCard.xib; sourceTree = "<group>"; };
+		27D70BF92327F82F0049940B /* BadgeCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCard.swift; sourceTree = "<group>"; };
 		31579BBB2327C556005EC3EB /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		31579BBD2327C7EB005EC3EB /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		6D95ED51A980A67D912CBAFF /* Pods-MBMobileExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMobileExample.debug.xcconfig"; path = "Target Support Files/Pods-MBMobileExample/Pods-MBMobileExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27B31C552327CDC900E95728 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27B31C562327CDD600E95728 /* SDKHandler.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		95F5164836EA3EE06717BD5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +132,7 @@
 		99266848230154AF0065BE53 = {
 			isa = PBXGroup;
 			children = (
+				27B31C552327CDC900E95728 /* Model */,
 				99266853230154AF0065BE53 /* MBMobileExample */,
 				99266852230154AF0065BE53 /* Products */,
 				D096F12932A6448DA481F9B1 /* Pods */,
@@ -183,6 +200,8 @@
 		99266875230156C10065BE53 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				27D70BF92327F82F0049940B /* BadgeCard.swift */,
+				27D70BF82327F82F0049940B /* BadgeCard.xib */,
 				99266856230154AF0065BE53 /* HomeViewController.swift */,
 				31579BBB2327C556005EC3EB /* TripsViewController.swift */,
 				31579BBD2327C7EB005EC3EB /* LiveViewController.swift */,
@@ -193,6 +212,7 @@
 		9926687823015D720065BE53 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				27B31C532327CC0F00E95728 /* Speedometer.storyboard */,
 				9926686B230156420065BE53 /* LaunchScreen.storyboard */,
 				992668692301562E0065BE53 /* Main.storyboard */,
 			);
@@ -289,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				991B43342301AB68003D4B26 /* CommandDoorView.xib in Resources */,
+				27B31C542327CC0F00E95728 /* Speedometer.storyboard in Resources */,
 				991B431923018AD5003D4B26 /* colors.xml in Resources */,
 				9926686C230156420065BE53 /* LaunchScreen.storyboard in Resources */,
 				991B4316230189F1003D4B26 /* CarImageView.xib in Resources */,
@@ -298,6 +319,7 @@
 				9926686A2301562E0065BE53 /* Main.storyboard in Resources */,
 				991B432C2301A13D003D4B26 /* InfoPlist.strings in Resources */,
 				991B432323018FFA003D4B26 /* ValueView.xib in Resources */,
+				27D70BFA2327F82F0049940B /* BadgeCard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,8 +408,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D70BFB2327F82F0049940B /* BadgeCard.swift in Sources */,
 				991B4315230189F1003D4B26 /* CarImageView.swift in Sources */,
 				991B431B23018B02003D4B26 /* Colors.swift in Sources */,
+				27B31C572327CDD600E95728 /* SDKHandler.swift in Sources */,
 				991B431E23018F2B003D4B26 /* CarStatusView.swift in Sources */,
 				99266884230181180065BE53 /* Acknowledgements.swift in Sources */,
 				991B43352301AB68003D4B26 /* CommandDoorView.swift in Sources */,
@@ -557,14 +581,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4X7Z6AL43R;
+				DEVELOPMENT_TEAM = 9FD38958WM;
 				INFOPLIST_FILE = MBMobileExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.MBMobileExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.MBMobileExample1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -579,14 +603,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4X7Z6AL43R;
+				DEVELOPMENT_TEAM = 9FD38958WM;
 				INFOPLIST_FILE = MBMobileExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.MBMobileExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daimler.MBMobileExample1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

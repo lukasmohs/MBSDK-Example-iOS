@@ -1,4 +1,4 @@
-platform :ios,'10.0'
+platform :ios,'11.0'
 use_frameworks!
 inhibit_all_warnings!
 
@@ -10,6 +10,7 @@ def pods
   pod 'SwiftGen', '~> 6.0'
   pod 'SwiftLint', '~> 0.30'
   pod 'EFCountingLabel'
+  pod 'ABGaugeViewKit'
     
   # data
     
