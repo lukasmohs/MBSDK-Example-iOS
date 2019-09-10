@@ -25,6 +25,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         setUpChart()
         drawPolyline()
+        addGradientView()
     }
     
     func setUpChart() {
@@ -37,7 +38,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     
     func addGradientView() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
+        gradientLayer.frame = gradientView.bounds
         gradientLayer.colors = [UIColor.yellow.cgColor, UIColor.white.cgColor]
         gradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
