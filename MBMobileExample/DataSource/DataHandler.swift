@@ -29,6 +29,20 @@ struct Trip {
     var gasConsumptionStart: Double
     var electricConsumptionStart: Double
     var liquidConsumptionStart: Double
+    
+    func getFormattedDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd"
+        let someDateTime = formatter.string(from: timeStamp)
+        return someDateTime
+    }
+    
+    func getHoursAndMinutesFromDate() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let someDateTime = formatter.string(from: timeStamp)
+        return someDateTime
+    }
 }
 
 struct Location {

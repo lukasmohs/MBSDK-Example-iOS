@@ -15,6 +15,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     
     var trip: Trip?
 
+    @IBOutlet weak var travelTimeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var chartView: Chart!
     @IBOutlet weak var gradientView: UIView!
@@ -23,6 +24,13 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
          self.navigationItem.title = "Trip Details"
         mapView.delegate = self
+        
+        if let formattedDate = trip?.getFormattedDate(), let hoursAndMinutes = trip?.getHoursAndMinutesFromDate(){
+            travelTimeLabel.text = formattedDate + " " + hoursAndMinutes
+        } else {
+            travelTimeLabel.text = ""
+        }
+        
         if let tripData = trip?.tripData {
             drawPolyline(dataPoints: tripData)
             setUpChart(dataPoints: tripData)

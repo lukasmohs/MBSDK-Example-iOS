@@ -43,28 +43,14 @@ class TripsTableViewCell: UITableViewCell {
         destinationLabel?.text = destination
         carLabel?.text = "Benz AMG - 63 coupé"
         
-        dateLabel.text = getHoursAndMinutesFromDate(date: trip.timeStamp)
-        monthLabel.text = getFormattedDate(date: trip.timeStamp)
+        dateLabel.text = trip.getHoursAndMinutesFromDate()
+        monthLabel.text = trip.getFormattedDate()
         var averageEcoScore = 0
         for tripDataPoint in  trip.tripData {
             averageEcoScore += tripDataPoint.ecoScore.total
         }
         let averageEcoScoreFinal = round(Double(averageEcoScore) / Double(trip.tripData.count))
         ecoScoreLabel.text = String(averageEcoScoreFinal)
-    }
-    func getFormattedDate(date: Date) -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd"
-        let someDateTime = formatter.string(from: date)
-        return someDateTime
-    }
-    
-    
-    func getHoursAndMinutesFromDate(date: Date) -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        let someDateTime = formatter.string(from: date)
-        return someDateTime
     }
     
 }
