@@ -35,6 +35,7 @@
 		9926687F23015F3F0065BE53 /* MBMobileSDKConfigurationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926687D23015F3F0065BE53 /* MBMobileSDKConfigurationHelper.swift */; };
 		9926688023015F3F0065BE53 /* MBLoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926687E23015F3F0065BE53 /* MBLoggerConfiguration.swift */; };
 		99266884230181180065BE53 /* Acknowledgements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99266883230181180065BE53 /* Acknowledgements.swift */; };
+		EA1A603E2327DF1500BD85E8 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A603D2327DF1500BD85E8 /* DataHandler.swift */; };
 		FD56F3C49DA3EF41DA9C25EC /* Pods_MBMobileExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 718347E4538D234D81201142 /* Pods_MBMobileExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		9926687E23015F3F0065BE53 /* MBLoggerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBLoggerConfiguration.swift; sourceTree = "<group>"; };
 		99266883230181180065BE53 /* Acknowledgements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acknowledgements.swift; sourceTree = "<group>"; };
 		AE7C1E23137A2B51780301EE /* Pods-MBMobileExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMobileExample.release.xcconfig"; path = "Target Support Files/Pods-MBMobileExample/Pods-MBMobileExample.release.xcconfig"; sourceTree = "<group>"; };
+		EA1A603D2327DF1500BD85E8 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				9926687923015EFB0065BE53 /* MenuDataSource.swift */,
+				EA1A603D2327DF1500BD85E8 /* DataHandler.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				991B43352301AB68003D4B26 /* CommandDoorView.swift in Sources */,
 				9926687F23015F3F0065BE53 /* MBMobileSDKConfigurationHelper.swift in Sources */,
 				991B43312301A182003D4B26 /* Localizations.swift in Sources */,
+				EA1A603E2327DF1500BD85E8 /* DataHandler.swift in Sources */,
 				99266857230154AF0065BE53 /* HomeViewController.swift in Sources */,
 				99266855230154AF0065BE53 /* AppDelegate.swift in Sources */,
 				9926688023015F3F0065BE53 /* MBLoggerConfiguration.swift in Sources */,
