@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31579BBC2327C556005EC3EB /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31579BBB2327C556005EC3EB /* TripsViewController.swift */; };
+		31579BBE2327C7EB005EC3EB /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31579BBD2327C7EB005EC3EB /* LiveViewController.swift */; };
 		991B4315230189F1003D4B26 /* CarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B4313230189F1003D4B26 /* CarImageView.swift */; };
 		991B4316230189F1003D4B26 /* CarImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991B4314230189F1003D4B26 /* CarImageView.xib */; };
 		991B431923018AD5003D4B26 /* colors.xml in Resources */ = {isa = PBXBuildFile; fileRef = 991B431823018AD5003D4B26 /* colors.xml */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31579BBB2327C556005EC3EB /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		31579BBD2327C7EB005EC3EB /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		6D95ED51A980A67D912CBAFF /* Pods-MBMobileExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMobileExample.debug.xcconfig"; path = "Target Support Files/Pods-MBMobileExample/Pods-MBMobileExample.debug.xcconfig"; sourceTree = "<group>"; };
 		718347E4538D234D81201142 /* Pods_MBMobileExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBMobileExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991B4313230189F1003D4B26 /* CarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarImageView.swift; sourceTree = "<group>"; };
@@ -178,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				99266856230154AF0065BE53 /* HomeViewController.swift */,
+				31579BBB2327C556005EC3EB /* TripsViewController.swift */,
+				31579BBD2327C7EB005EC3EB /* LiveViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -387,11 +393,13 @@
 				99266857230154AF0065BE53 /* HomeViewController.swift in Sources */,
 				99266855230154AF0065BE53 /* AppDelegate.swift in Sources */,
 				9926688023015F3F0065BE53 /* MBLoggerConfiguration.swift in Sources */,
+				31579BBC2327C556005EC3EB /* TripsViewController.swift in Sources */,
 				991B432223018FFA003D4B26 /* ValueView.swift in Sources */,
 				9926686E2301567F0065BE53 /* Scenes.swift in Sources */,
 				9926687A23015EFB0065BE53 /* MenuDataSource.swift in Sources */,
 				9926687C23015F130065BE53 /* Constants.swift in Sources */,
 				99266872230156910065BE53 /* Assets.swift in Sources */,
+				31579BBE2327C7EB005EC3EB /* LiveViewController.swift in Sources */,
 				99266870230156880065BE53 /* Segues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,8 +551,9 @@
 			baseConfigurationReference = 6D95ED51A980A67D912CBAFF /* Pods-MBMobileExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4X7Z6AL43R;
 				INFOPLIST_FILE = MBMobileExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -564,8 +573,9 @@
 			baseConfigurationReference = AE7C1E23137A2B51780301EE /* Pods-MBMobileExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4X7Z6AL43R;
 				INFOPLIST_FILE = MBMobileExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

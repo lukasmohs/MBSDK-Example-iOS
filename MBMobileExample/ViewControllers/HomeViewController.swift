@@ -16,7 +16,8 @@ class HomeViewController: UIViewController {
 	@IBOutlet private weak var carStatusView: CarStatusView!
 	@IBOutlet private weak var commandDoorView: CommandDoorView!
 
-	// MARK: - Properties
+    @IBOutlet weak var profileImageView: UIImageView!
+    // MARK: - Properties
 	
 	private var disposal = Disposal()
 	private var token: MyCarSocketNotificationToken?
@@ -24,40 +25,59 @@ class HomeViewController: UIViewController {
 	
 	// MARK: - View Lifecycle
 	
-	deinit {
-		LOG.V()
-		
-		/// remove observer
-		Notification.Name.didChangeVehicleSelection.remove(self)
-		
-		/// stop observer
-		self.disposal.removeAll()
-		MBCarKit.socketService.unregisterAndDisconnectIfPossible(token: self.token)
-	}
-	
+    func setupProfileView() {
+        let image = UIImage(named: "zetsche")
+        profileImageView.layer.borderWidth = 1.0
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.borderColor = UIColor.white.cgColor
+        profileImageView.image = image
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+        profileImageView.clipsToBounds = true
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+        setupProfileView()
 		/// add observer
 		Notification.Name.didChangeVehicleSelection.add(self, selector: #selector(self.didChangeVehicleSelection(notification:)))
 		
-		self.setupScrollView()
+		//self.setupScrollView()
 		
 		self.observeVehicleStatus()
 		self.didChangeVehicleSelection(notification: nil)
 		
 		self.configureCommandDoors()
 	}
-	
-	override func viewDidAppear(_ animated: Bool) {
+    
+    @IBAction func gotoLiveViewButtonClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "showLiveView", sender: self)
+    }
+    
+    @IBAction func myTripsButtonClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "showTrips", sender: self)
+    }
+    override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		if self.scrollView.contentSize.equalTo(self.contentStackView.bounds.size) == false {
-			
-			self.scrollView.contentSize = self.contentStackView.bounds.size
-			self.scrollView.layoutIfNeeded()
-		}
+//        if self.scrollView.contentSize.equalTo(self.contentStackView.bounds.size) == false {
+//
+//            self.scrollView.contentSize = self.contentStackView.bounds.size
+//            self.scrollView.layoutIfNeeded()
+//        }
 	}
+    
+    deinit {
+        LOG.V()
+        
+        /// remove observer
+        Notification.Name.didChangeVehicleSelection.remove(self)
+        
+        /// stop observer
+        self.disposal.removeAll()
+        MBCarKit.socketService.unregisterAndDisconnectIfPossible(token: self.token)
+    }
+    
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()

@@ -12,6 +12,10 @@ import UIKit
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum StoryboardSegue {
+  internal enum Main: String, SegueType {
+    case showLiveView
+    case showTrips
+  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 

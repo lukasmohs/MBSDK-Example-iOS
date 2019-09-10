@@ -47,6 +47,7 @@ internal enum Asset {
   internal static let carOutline = ImageAsset(name: "car_outline")
   internal static let carWithoutDoors = ImageAsset(name: "car_without_doors")
   internal static let mainBg = ImageAsset(name: "main-bg")
+  internal static let zetsche = ImageAsset(name: "zetsche")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
