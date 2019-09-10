@@ -11,19 +11,23 @@ import UIKit
 
 class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var trips: [Trip] = []
+    @IBOutlet var tripsTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trips.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        var cell = tableView.dequeueReusableCell(withIdentifier: "TripsTableViewCell", for: indexPath) as! TripsTableViewCell
+        cell.setTestDetails(car: "benz", origin: "Stuttgart", destination: "Karlsruhe", date: Date())
+        return cell
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        tripsTableView.tableFooterView = UIView()
+        tripsTableView.dataSource = self
+        tripsTableView.delegate =  self
         
     }
     
