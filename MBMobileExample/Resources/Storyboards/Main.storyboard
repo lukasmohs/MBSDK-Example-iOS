@@ -512,11 +512,54 @@
                     </tableView>
                     <connections>
                         <outlet property="tripsTableView" destination="8g9-AM-CcC" id="rYA-0A-3Vr"/>
+                        <segue destination="Wae-AW-ty2" kind="show" identifier="showDetail" id="e8a-OE-B3m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="poo-5Z-5NX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="789.375" y="85.563380281690144"/>
+        </scene>
+        <!--Trip Detail View-->
+        <scene sceneID="V0M-LI-sFj">
+            <objects>
+                <viewController id="Wae-AW-ty2" userLabel="Trip Detail View" customClass="TripDetailViewController" customModule="MBMobileExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="joa-Ec-sRT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5S-8d-ssj">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNZ-T5-KBK">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="800" id="ZIO-a9-ZfC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aNZ-T5-KBK" firstAttribute="centerX" secondItem="q5S-8d-ssj" secondAttribute="centerX" id="7jm-5X-Osv"/>
+                                    <constraint firstItem="aNZ-T5-KBK" firstAttribute="leading" secondItem="q5S-8d-ssj" secondAttribute="leading" id="O7K-bV-60Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="aNZ-T5-KBK" secondAttribute="trailing" id="b5j-6k-OMa"/>
+                                    <constraint firstItem="aNZ-T5-KBK" firstAttribute="top" secondItem="q5S-8d-ssj" secondAttribute="top" id="dhb-Xw-3cp"/>
+                                    <constraint firstAttribute="bottom" secondItem="aNZ-T5-KBK" secondAttribute="bottom" id="rJl-MP-c3c"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="q5S-8d-ssj" firstAttribute="bottom" secondItem="TkV-Ke-Pit" secondAttribute="bottom" id="5ik-Ps-Pc1"/>
+                            <constraint firstItem="q5S-8d-ssj" firstAttribute="top" secondItem="TkV-Ke-Pit" secondAttribute="top" id="E0i-Po-MUN"/>
+                            <constraint firstItem="q5S-8d-ssj" firstAttribute="trailing" secondItem="TkV-Ke-Pit" secondAttribute="trailing" id="FV5-KP-xKZ"/>
+                            <constraint firstItem="q5S-8d-ssj" firstAttribute="leading" secondItem="TkV-Ke-Pit" secondAttribute="leading" id="nqu-vW-ZNI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TkV-Ke-Pit"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pg-8T-zp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1721.25" y="83.450704225352112"/>
         </scene>
     </scenes>
     <resources>

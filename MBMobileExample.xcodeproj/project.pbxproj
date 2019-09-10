@@ -13,6 +13,7 @@
 		31579BBC2327C556005EC3EB /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31579BBB2327C556005EC3EB /* TripsViewController.swift */; };
 		31579BBE2327C7EB005EC3EB /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31579BBD2327C7EB005EC3EB /* LiveViewController.swift */; };
 		31740668232818DC009D1A12 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740667232818DC009D1A12 /* TripsTableViewCell.swift */; };
+		3174066A23281CB8009D1A12 /* TripDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3174066923281CB8009D1A12 /* TripDetailViewController.swift */; };
 		991B4315230189F1003D4B26 /* CarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991B4313230189F1003D4B26 /* CarImageView.swift */; };
 		991B4316230189F1003D4B26 /* CarImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991B4314230189F1003D4B26 /* CarImageView.xib */; };
 		991B431923018AD5003D4B26 /* colors.xml in Resources */ = {isa = PBXBuildFile; fileRef = 991B431823018AD5003D4B26 /* colors.xml */; };
@@ -51,6 +52,7 @@
 		31579BBB2327C556005EC3EB /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		31579BBD2327C7EB005EC3EB /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		31740667232818DC009D1A12 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
+		3174066923281CB8009D1A12 /* TripDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailViewController.swift; sourceTree = "<group>"; };
 		6D95ED51A980A67D912CBAFF /* Pods-MBMobileExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMobileExample.debug.xcconfig"; path = "Target Support Files/Pods-MBMobileExample/Pods-MBMobileExample.debug.xcconfig"; sourceTree = "<group>"; };
 		718347E4538D234D81201142 /* Pods_MBMobileExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MBMobileExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991B4313230189F1003D4B26 /* CarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarImageView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				31579BBB2327C556005EC3EB /* TripsViewController.swift */,
 				31579BBD2327C7EB005EC3EB /* LiveViewController.swift */,
 				31740667232818DC009D1A12 /* TripsTableViewCell.swift */,
+				3174066923281CB8009D1A12 /* TripDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				991B431B23018B02003D4B26 /* Colors.swift in Sources */,
 				991B431E23018F2B003D4B26 /* CarStatusView.swift in Sources */,
 				99266884230181180065BE53 /* Acknowledgements.swift in Sources */,
+				3174066A23281CB8009D1A12 /* TripDetailViewController.swift in Sources */,
 				991B43352301AB68003D4B26 /* CommandDoorView.swift in Sources */,
 				9926687F23015F3F0065BE53 /* MBMobileSDKConfigurationHelper.swift in Sources */,
 				991B43312301A182003D4B26 /* Localizations.swift in Sources */,
