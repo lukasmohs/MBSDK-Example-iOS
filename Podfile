@@ -9,7 +9,7 @@ def pods
   # code analyser / generator
   pod 'SwiftGen', '~> 6.0'
   pod 'SwiftLint', '~> 0.30'
-    
+  pod 'EFCountingLabel'
   # data
     
   # layout / ui

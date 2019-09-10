@@ -36,6 +36,7 @@
 		9926688023015F3F0065BE53 /* MBLoggerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926687E23015F3F0065BE53 /* MBLoggerConfiguration.swift */; };
 		99266884230181180065BE53 /* Acknowledgements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99266883230181180065BE53 /* Acknowledgements.swift */; };
 		EA1A603E2327DF1500BD85E8 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A603D2327DF1500BD85E8 /* DataHandler.swift */; };
+		EA20145B2327E8F8008622EC /* BadgeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA20145A2327E8F8008622EC /* BadgeCard.swift */; };
 		FD56F3C49DA3EF41DA9C25EC /* Pods_MBMobileExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 718347E4538D234D81201142 /* Pods_MBMobileExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		99266883230181180065BE53 /* Acknowledgements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acknowledgements.swift; sourceTree = "<group>"; };
 		AE7C1E23137A2B51780301EE /* Pods-MBMobileExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBMobileExample.release.xcconfig"; path = "Target Support Files/Pods-MBMobileExample/Pods-MBMobileExample.release.xcconfig"; sourceTree = "<group>"; };
 		EA1A603D2327DF1500BD85E8 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
+		EA20145A2327E8F8008622EC /* BadgeCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				99266856230154AF0065BE53 /* HomeViewController.swift */,
+				EA20145A2327E8F8008622EC /* BadgeCard.swift */,
 				31579BBB2327C556005EC3EB /* TripsViewController.swift */,
 				31579BBD2327C7EB005EC3EB /* LiveViewController.swift */,
 			);
@@ -401,6 +404,7 @@
 				991B432223018FFA003D4B26 /* ValueView.swift in Sources */,
 				9926686E2301567F0065BE53 /* Scenes.swift in Sources */,
 				9926687A23015EFB0065BE53 /* MenuDataSource.swift in Sources */,
+				EA20145B2327E8F8008622EC /* BadgeCard.swift in Sources */,
 				9926687C23015F130065BE53 /* Constants.swift in Sources */,
 				99266872230156910065BE53 /* Assets.swift in Sources */,
 				31579BBE2327C7EB005EC3EB /* LiveViewController.swift in Sources */,
