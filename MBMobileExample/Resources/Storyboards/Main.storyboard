@@ -24,6 +24,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fl2-21-98M">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nature" translatesAutoresizingMaskIntoConstraints="NO" id="0HO-PT-rpQ">
+                                                <rect key="frame" x="0.0" y="-30" width="320" height="308"/>
+                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zetsche" translatesAutoresizingMaskIntoConstraints="NO" id="3xm-Uv-AYQ">
                                                 <rect key="frame" x="250" y="28" width="50" height="50"/>
                                                 <constraints>
@@ -121,14 +124,18 @@
                                             <constraint firstItem="he9-Ok-qUC" firstAttribute="top" secondItem="bPT-VT-J2E" secondAttribute="bottom" constant="20" id="8Sa-b5-FKw"/>
                                             <constraint firstAttribute="trailing" secondItem="fhc-YP-API" secondAttribute="trailing" constant="154" id="9uT-kx-WjM"/>
                                             <constraint firstItem="0ZG-Rx-g84" firstAttribute="leading" secondItem="Fl2-21-98M" secondAttribute="leading" constant="20" id="Azu-8j-sya"/>
+                                            <constraint firstItem="0HO-PT-rpQ" firstAttribute="bottom" secondItem="he9-Ok-qUC" secondAttribute="bottom" id="Dv8-DN-no8"/>
                                             <constraint firstItem="bPT-VT-J2E" firstAttribute="centerX" secondItem="Fl2-21-98M" secondAttribute="centerX" id="Ftu-0Q-JQi"/>
                                             <constraint firstItem="3xm-Uv-AYQ" firstAttribute="leading" secondItem="0ZG-Rx-g84" secondAttribute="trailing" constant="8" symbolic="YES" id="Hda-6a-zIf"/>
+                                            <constraint firstAttribute="trailing" secondItem="0HO-PT-rpQ" secondAttribute="trailing" id="J6w-f6-IZ6"/>
                                             <constraint firstItem="JQD-qP-91r" firstAttribute="leading" secondItem="Fl2-21-98M" secondAttribute="leading" constant="20" id="Jle-zz-JhC"/>
                                             <constraint firstItem="0ZG-Rx-g84" firstAttribute="trailing" secondItem="GDi-Ui-Hs1" secondAttribute="trailing" id="KTc-aM-Ooq"/>
                                             <constraint firstAttribute="trailing" secondItem="3xm-Uv-AYQ" secondAttribute="trailing" constant="20" id="LSc-2N-TI3"/>
                                             <constraint firstAttribute="bottom" secondItem="JQD-qP-91r" secondAttribute="bottom" constant="121" id="OKy-14-GNf"/>
                                             <constraint firstItem="bPT-VT-J2E" firstAttribute="top" secondItem="0ZG-Rx-g84" secondAttribute="bottom" constant="30" id="R46-gq-KTA"/>
+                                            <constraint firstItem="0HO-PT-rpQ" firstAttribute="leading" secondItem="Fl2-21-98M" secondAttribute="leading" id="RiW-uB-wTa"/>
                                             <constraint firstItem="fhc-YP-API" firstAttribute="top" secondItem="3xm-Uv-AYQ" secondAttribute="bottom" constant="-50" id="T9K-FL-MJS"/>
+                                            <constraint firstItem="0HO-PT-rpQ" firstAttribute="top" secondItem="Fl2-21-98M" secondAttribute="top" constant="-30" id="YNC-57-M4N"/>
                                             <constraint firstAttribute="trailing" secondItem="bPT-VT-J2E" secondAttribute="trailing" constant="73" id="aTM-TR-lrf"/>
                                             <constraint firstItem="GDi-Ui-Hs1" firstAttribute="top" secondItem="3xm-Uv-AYQ" secondAttribute="top" id="ejm-YH-Jyv"/>
                                             <constraint firstItem="GDi-Ui-Hs1" firstAttribute="leading" secondItem="Fl2-21-98M" secondAttribute="leading" constant="20" id="gz6-l6-qie"/>
@@ -201,6 +208,7 @@
                         <outlet property="commandDoorView" destination="iEG-gz-1Z0" id="giH-PR-rt7"/>
                         <outlet property="contentStackView" destination="uFz-DO-rGW" id="4NP-GX-caI"/>
                         <outlet property="profileImageView" destination="3xm-Uv-AYQ" id="OMK-UR-ypG"/>
+                        <outlet property="savingsView" destination="bPT-VT-J2E" id="rFn-i4-zIt"/>
                         <outlet property="scrollView" destination="2r5-aN-MRz" id="EWg-VO-VEl"/>
                         <outlet property="stackViewWidthConstraint" destination="23r-aS-opq" id="bJ2-Q5-lu9"/>
                         <segue destination="aoL-2t-JET" kind="show" identifier="showTrips" id="RgH-OK-evs"/>
@@ -268,6 +276,7 @@
     </scenes>
     <resources>
         <image name="leaf" width="512" height="512"/>
+        <image name="nature" width="1354" height="900"/>
         <image name="zetsche" width="666" height="666"/>
     </resources>
 </document>

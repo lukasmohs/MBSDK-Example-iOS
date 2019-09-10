@@ -22,7 +22,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var co2SavingsLabel: EFCountingLabel!
     @IBOutlet weak var profileImageView: UIImageView!
     // MARK: - Properties
-	
+    @IBOutlet weak var savingsView: UIView!
+    
 	private var disposal = Disposal()
 	private var token: MyCarSocketNotificationToken?
 
@@ -39,6 +40,14 @@ class HomeViewController: UIViewController {
         profileImageView.clipsToBounds = true
     }
     
+    func setupSavingsView() {
+        savingsView.layer.borderWidth = 1.0
+        savingsView.layer.masksToBounds = false
+        savingsView.layer.borderColor = UIColor.white.cgColor
+        savingsView.layer.cornerRadius = 20
+        savingsView.clipsToBounds = true
+    }
+    
     func startCountingCO2() {
         co2SavingsLabel.setUpdateBlock { value, label in
             label.text = String(format: "%.1f%", value)
@@ -51,25 +60,45 @@ class HomeViewController: UIViewController {
         badgeStackView.axis = .horizontal
         badgeStackView.alignment = .leading
         badgeStackView.distribution = .equalSpacing
-        badgeStackView.spacing = 8
+        badgeStackView.spacing = 2
         
-        stackViewWidthConstraint.constant += CGFloat(20 * 70)
-        for i in 0...20 {
+        stackViewWidthConstraint.constant += CGFloat(5 * 70)
         
-            let image = UIImage(named: "zetsche")
-            let view = BadgeCard.instanceFromNib() as! BadgeCard
-            view.badgeImageView.image = image
-            view.badgeName.text = "test"
-            badgeStackView.addArrangedSubview(view)
-            
-    
-            let spacerView = UIView()
-            spacerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
-            badgeStackView.addArrangedSubview(spacerView)
-            
-            
-        }
+//        1
+        let image1 = UIImage(named: "round_loop")
+        let view1 = BadgeCard.instanceFromNib() as! BadgeCard
+        view1.badgeImageView.image = image1
+        view1.badgeName.text = "Wheelsfree"
+        badgeStackView.addArrangedSubview(view1)
+//        2
+        let image2 = UIImage(named: "round_call_made")
+        let view2 = BadgeCard.instanceFromNib() as! BadgeCard
+        view2.badgeImageView.image = image2
+        view2.badgeName.text = "Bonus Range"
+        badgeStackView.addArrangedSubview(view2)
+//        3
+        let image3 = UIImage(named: "zetsche")
+        let view3 = BadgeCard.instanceFromNib() as! BadgeCard
+        view3.badgeImageView.image = image3
+        view3.badgeName.text = "test"
+        badgeStackView.addArrangedSubview(view3)
+//        4
+        let image4 = UIImage(named: "zetsche")
+        let view4 = BadgeCard.instanceFromNib() as! BadgeCard
+        view4.badgeImageView.image = image4
+        view4.badgeName.text = "test"
+        badgeStackView.addArrangedSubview(view4)
+//        5
+        let image5 = UIImage(named: "zetsche")
+        let view5 = BadgeCard.instanceFromNib() as! BadgeCard
+        view5.badgeImageView.image = image5
+        view5.badgeName.text = "test"
+        badgeStackView.addArrangedSubview(view5)
         
+        
+        let spacerView = UIView()
+        spacerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        badgeStackView.addArrangedSubview(spacerView)
         
     }
     
@@ -90,6 +119,7 @@ class HomeViewController: UIViewController {
         startCountingCO2()
         setupProfileView()
         addBadgesToView()
+        setupSavingsView()
 	}
     
     @IBAction func gotoLiveViewButtonClicked(_ sender: Any) {
