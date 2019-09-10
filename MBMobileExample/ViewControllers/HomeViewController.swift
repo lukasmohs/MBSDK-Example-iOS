@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
 	@IBOutlet private weak var carStatusView: CarStatusView!
 	@IBOutlet private weak var commandDoorView: CommandDoorView!
 
+    @IBOutlet weak var stackViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var badgeStackView: UIStackView!
     @IBOutlet weak var co2SavingsLabel: EFCountingLabel!
     @IBOutlet weak var profileImageView: UIImageView!
     // MARK: - Properties
@@ -44,6 +46,33 @@ class HomeViewController: UIViewController {
         co2SavingsLabel.countFrom(1, to: 1000, withDuration: 2.0)
     }
     
+    func addBadgesToView() {
+        
+        badgeStackView.axis = .horizontal
+        badgeStackView.alignment = .leading
+        badgeStackView.distribution = .equalSpacing
+        badgeStackView.spacing = 8
+        
+        stackViewWidthConstraint.constant += CGFloat(20 * 70)
+        for i in 0...20 {
+        
+            let image = UIImage(named: "zetsche")
+            let view = BadgeCard.instanceFromNib() as! BadgeCard
+            view.badgeImageView.image = image
+            view.badgeName.text = "test"
+            badgeStackView.addArrangedSubview(view)
+            
+    
+            let spacerView = UIView()
+            spacerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+            badgeStackView.addArrangedSubview(spacerView)
+            
+            
+        }
+        
+        
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
     
@@ -51,6 +80,7 @@ class HomeViewController: UIViewController {
 		Notification.Name.didChangeVehicleSelection.add(self, selector: #selector(self.didChangeVehicleSelection(notification:)))
 		
 		//self.setupScrollView()
+    
 		
 		self.observeVehicleStatus()
 		self.didChangeVehicleSelection(notification: nil)
@@ -59,6 +89,7 @@ class HomeViewController: UIViewController {
         
         startCountingCO2()
         setupProfileView()
+        addBadgesToView()
 	}
     
     @IBAction func gotoLiveViewButtonClicked(_ sender: Any) {
