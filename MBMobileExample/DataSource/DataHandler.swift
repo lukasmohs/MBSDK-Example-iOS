@@ -9,6 +9,8 @@
 import Foundation
 import MBMobileSDK
 import MBCarKit
+import CoreLocation
+
 
 struct DataPoint {
     let timeStamp: Date
@@ -20,6 +22,8 @@ struct Trip {
     let timeStamp: Date
     let name: String
     var tripData: [DataPoint]
+    var origin: String
+    var destination: String
     //Statistics
     var avgSpeedStart: Double
     var distanceStart: Double
@@ -58,6 +62,11 @@ struct EcoScore {
     let total: Int
 }
 
+struct ReturnLocations {
+    let origin: String
+    let destination: String
+}
+
 class DataHandler {
     var trips: [Trip] =  []
     var currentTrip: Trip?
@@ -66,11 +75,31 @@ class DataHandler {
     
     func startNewTrip( name: String ) {
         // swiftlint:disable:next line_length
-        self.currentTrip = Trip(timeStamp: Date(), name: name, tripData: [], avgSpeedStart: 0, distanceStart: 0, distanceZeStart: 0, drivenTimeStart: 0, drivenTimeZeStart: 0, gasConsumptionStart: 0, electricConsumptionStart: 0, liquidConsumptionStart: 0)
+        self.currentTrip = Trip(timeStamp: Date(), name: name, tripData: [],origin: "", destination: "", avgSpeedStart: 0, distanceStart: 0, distanceZeStart: 0, drivenTimeStart: 0, drivenTimeZeStart: 0, gasConsumptionStart: 0, electricConsumptionStart: 0, liquidConsumptionStart: 0)
     }
     
     func finishCurrentTrip( statistics: VehicleStatisticsModel ) {
-        guard var currentTrip = self.currentTrip, let currentAvgSpeedStart = statistics.averageSpeed.start.value,
+        guard var currentTrip = self.currentTrip else {
+                print("[Error] Current trip is nil")
+                return
+        }
+        if(trips.count == 0){
+            currentTrip.origin = "Frankfurt Prudi"
+            currentTrip.destination = "Offenbach Brudi"
+        } else if(trips.count == 1 ){
+            currentTrip.origin = "Berlin City"
+            currentTrip.destination = "Kreuzberg"
+        } else if ( trips.count == 2){
+            currentTrip.origin = "München"
+            currentTrip.destination = "Starnberg"
+        } else {
+            currentTrip.origin = "Regensburg"
+            currentTrip.destination = "Neutraubling"
+        }
+        //let origin = currentTrip.tripData[0].location
+        //let destination = currentTrip.tripData[currentTrip.tripData.count-1].location
+        //tranlateCoordinates(origin: origin, destination: destination)
+        guard let currentAvgSpeedStart = statistics.averageSpeed.start.value,
             let distanceStart = statistics.distance.start.value, let distanceZeStart = statistics.distance.ze.start.value,
             let drivenTimeStart = statistics.drivenTime.start.value,
             let drivenTimeZeStart = statistics.drivenTime.ze.start.value,
@@ -109,5 +138,44 @@ class DataHandler {
     
     func getCurrentTrip() -> Trip? {
         return currentTrip
+    }
+    
+    func geocode(latitude: Double, longitude: Double, completion: @escaping (_ placemark: [CLPlacemark]?, _ error: Error?) -> Void)  {
+        CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude), completionHandler: completion)
+    }
+    
+    func tranlateCoordinates(origin: Location, destination: Location) {
+        var returnStringOrigin = ""
+        geocode(latitude: origin.latitude, longitude: origin.longitude){ placemark, error in
+            if let error = error as? CLError {
+                print("CLError:", error)
+                return
+            } else if let placemark = placemark?.first {
+                DispatchQueue.main.async {
+                    let adress = placemark.thoroughfare ?? "unknownAdress"
+                    let number = placemark.subThoroughfare ?? "unknownNumber"
+                    let city = placemark.locality ?? "unknownCity"
+                    returnStringOrigin =  adress + " " + number + ", " + city
+                    self.currentTrip?.origin = returnStringOrigin
+                    print("ReturnstringOrigin: " + returnStringOrigin)
+                }
+            }
+        }
+        var returnStringDestination = ""
+        geocode(latitude: destination.latitude, longitude: destination.longitude){ placemark, error in
+            if let error = error as? CLError {
+                print("CLError:", error)
+                return
+            } else if let placemark = placemark?.first {
+                DispatchQueue.main.async {
+                    let adress = placemark.thoroughfare ?? "unknownAdress"
+                    let number = placemark.subThoroughfare ?? "unknownNumber"
+                    let city = placemark.locality ?? "unknownCity"
+                    returnStringDestination =  adress + " " + number + ", " + city
+                    self.currentTrip?.destination = returnStringDestination
+                    print("ReturnstringDestination: " + returnStringDestination)
+                }
+            }
+        }
     }
 }

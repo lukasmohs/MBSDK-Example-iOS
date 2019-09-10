@@ -247,6 +247,25 @@ class HomeViewController: UIViewController {
 				self?.carImageView.update(vehicle: vehicle)
 			}
 		}.add(to: &self.disposal)
+        
+        socketObservable.engine.observe { [weak self] (state) in
+            switch state {
+            case .updated(let engine):
+                guard let engineState = engine.state.value else {
+                    print("[Error]: Engine state value is nil")
+                    return
+                }
+                if engineState == .stopped {
+                    print("Engine stopped")
+                } else {
+                    print("Engine started")
+                    self?.performSegue(withIdentifier: "showLiveView", sender: self)
+                    DataHandler.shared.startNewTrip(name: "Test Trip")
+                }
+            case .initial(let engine):
+                print("Engine initial state")
+            }
+            }.add(to: &self.disposal)
 
         /*socketObservable.statistics.observe { [weak self] (state) in
             switch state {
