@@ -17,6 +17,7 @@ struct DataPoint {
 }
 
 struct Trip {
+    let timeStamp: Date
     let name: String
     var tripData: [DataPoint]
     //Statistics
@@ -51,7 +52,7 @@ class DataHandler {
     
     func startNewTrip( name: String ) {
         // swiftlint:disable:next line_length
-        self.currentTrip = Trip(name: name, tripData: [], avgSpeedStart: 0, distanceStart: 0, distanceZeStart: 0, drivenTimeStart: 0, drivenTimeZeStart: 0, gasConsumptionStart: 0, electricConsumptionStart: 0, liquidConsumptionStart: 0)
+        self.currentTrip = Trip(timeStamp: Date(), name: name, tripData: [], avgSpeedStart: 0, distanceStart: 0, distanceZeStart: 0, drivenTimeStart: 0, drivenTimeZeStart: 0, gasConsumptionStart: 0, electricConsumptionStart: 0, liquidConsumptionStart: 0)
     }
     
     func finishCurrentTrip( statistics: VehicleStatisticsModel ) {

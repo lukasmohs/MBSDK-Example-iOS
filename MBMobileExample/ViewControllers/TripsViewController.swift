@@ -16,12 +16,17 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var segueIndex = -1
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return DataHandler.shared.getAllTrips().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "TripsTableViewCell", for: indexPath) as! TripsTableViewCell
-        cell.setTestDetails(car: "benz", origin: "Stuttgart", destination: "Karlsruhe", date: Date())
+        
+        let trip = DataHandler.shared.getAllTrips()[indexPath.row]
+        let origin: String = String(trip.tripData[0].location.latitude) + ", " + String(trip.tripData[0].location.longitude)
+        let destination: String = String(trip.tripData[trip.tripData.count-1].location.latitude) + ", " + String(trip.tripData[trip.tripData.count-1].location.longitude)
+        cell.setTestDetails(car: "benz", origin: origin, destination: destination, date: trip.timeStamp)
+        
         return cell
     }
     
