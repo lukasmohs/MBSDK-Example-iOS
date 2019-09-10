@@ -46,6 +46,7 @@ internal enum Asset {
   internal static let carLock = ImageAsset(name: "car_lock")
   internal static let carOutline = ImageAsset(name: "car_outline")
   internal static let carWithoutDoors = ImageAsset(name: "car_without_doors")
+  internal static let leaf = ImageAsset(name: "leaf")
   internal static let mainBg = ImageAsset(name: "main-bg")
   internal static let zetsche = ImageAsset(name: "zetsche")
 }
