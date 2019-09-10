@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zetsche" translatesAutoresizingMaskIntoConstraints="NO" id="KYq-Dp-xoq">
-                    <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                    <rect key="frame" x="15" y="10" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="XfH-BR-91S"/>
-                        <constraint firstAttribute="width" constant="50" id="ZeT-yw-B0Z"/>
+                        <constraint firstAttribute="height" constant="40" id="XfH-BR-91S"/>
+                        <constraint firstAttribute="width" constant="40" id="ZeT-yw-B0Z"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYa-Z1-Kdb">
@@ -32,11 +32,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KYq-Dp-xoq" secondAttribute="trailing" constant="10" id="AXb-Re-IkU"/>
-                <constraint firstItem="KYq-Dp-xoq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EUy-V2-hkE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KYq-Dp-xoq" secondAttribute="trailing" constant="15" id="AXb-Re-IkU"/>
+                <constraint firstItem="KYq-Dp-xoq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="EUy-V2-hkE"/>
                 <constraint firstItem="gYa-Z1-Kdb" firstAttribute="top" secondItem="KYq-Dp-xoq" secondAttribute="bottom" constant="3" id="XQN-lV-Pis"/>
                 <constraint firstItem="gYa-Z1-Kdb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="bNe-4B-eEa"/>
-                <constraint firstItem="KYq-Dp-xoq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="dRf-QP-m3E"/>
+                <constraint firstItem="KYq-Dp-xoq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="dRf-QP-m3E"/>
                 <constraint firstAttribute="trailing" secondItem="gYa-Z1-Kdb" secondAttribute="trailing" constant="5" id="r5o-Ow-WqR"/>
                 <constraint firstItem="gYa-Z1-Kdb" firstAttribute="top" secondItem="KYq-Dp-xoq" secondAttribute="bottom" constant="3" id="yKc-d7-Tpg"/>
             </constraints>
@@ -48,7 +48,7 @@
                 <outlet property="badgeImageView" destination="KYq-Dp-xoq" id="3gQ-Ck-NPJ"/>
                 <outlet property="badgeName" destination="gYa-Z1-Kdb" id="y15-uq-1Ld"/>
             </connections>
-            <point key="canvasLocation" x="-70.28985507246378" y="-139.95535714285714"/>
+            <point key="canvasLocation" x="-71.014492753623188" y="-139.95535714285714"/>
         </view>
     </objects>
     <resources>

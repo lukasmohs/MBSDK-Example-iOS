@@ -83,7 +83,7 @@ class HomeViewController: UIViewController {
         badgeStackView.distribution = .equalSpacing
         badgeStackView.spacing = 2
         
-        stackViewWidthConstraint.constant += CGFloat(5 * 70)
+        stackViewWidthConstraint.constant += CGFloat(5 * 50)
         
 //        1
         let image1 = UIImage(named: "round_loop")
