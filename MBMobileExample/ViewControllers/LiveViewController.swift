@@ -85,14 +85,9 @@ class LiveViewController: UIViewController {
                     return
                 }
                 if engineState == .stopped {
-                    guard let currentTrip = DataHandler.shared.getCurrentTrip() else {
-                        return
-                    }
-                    for dataPoint in currentTrip.tripData {
-                        print("[\(dataPoint.timeStamp)]" + "  \(dataPoint.location.latitude.value)/\(dataPoint.location.longitude.value)")
-                    }
-                    DataHandler.shared.finishCurrentTrip()
-                    print("Number of trips: \(DataHandler.shared.getAllTrips()[0])")
+                    print("Engine stopped")
+                    let currentStatistics = socketObservable.statistics.current
+                    DataHandler.shared.finishCurrentTrip(statistics: currentStatistics)
                 } else {
                     DataHandler.shared.startNewTrip(name: "Test Trip")
                 }
@@ -100,6 +95,7 @@ class LiveViewController: UIViewController {
                 print("Engine initial state")
             }
         }.add(to: &self.disposal)
+        
     }
 
     /// Example implementation how to create the connection and observes the status of the vehicle
