@@ -88,8 +88,6 @@ class LiveViewController: UIViewController {
                     print("Engine stopped")
                     let currentStatistics = socketObservable.statistics.current
                     DataHandler.shared.finishCurrentTrip(statistics: currentStatistics)
-                } else {
-                    DataHandler.shared.startNewTrip(name: "Test Trip")
                 }
             case .initial(let engine):
                 print("Engine initial state")
