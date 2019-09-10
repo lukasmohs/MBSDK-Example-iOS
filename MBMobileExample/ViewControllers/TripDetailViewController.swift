@@ -70,7 +70,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     func addGradientView() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = gradientView.bounds
-        gradientLayer.colors = [UIColor.Ridebee.BestGreen, UIColor.Ridebee.BadGreen]
+        gradientLayer.colors = [UIColor.green.cgColor, UIColor.lightGray.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradientView.layer.insertSublayer(gradientLayer, at: 0)
