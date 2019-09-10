@@ -18,23 +18,38 @@ struct DataPoint {
 
 struct Trip {
     let name: String
-    let tripData: [DataPoint]
+    var tripData: [DataPoint]
 }
 
-var trips: [Trip] = []
-
 class DataHandler {
+    var trips: [Trip] =  []
+    var currentTrip: Trip?
     
-    static func initTripData() {
-        
-        var tripData: [DataPoint] = []
-        //    let vehicleLocationModel = VehicleLocationModel()
-        //    VehicleLocationModel.heading
-        //    tripData.append(DataPoint(timeStamp: Date(), location: VehicleLocationModel(), ecoScore: VehicleEcoScoreModel()))
-        //
-        //    var trip = Trip(name: "Monday Morning", tripData: tripData)
-        //    trips.append(trip)
+    static let shared = DataHandler()
+    
+    func startNewTrip( name: String ) {
+        currentTrip = Trip( name: name, tripData: [] )
     }
     
-
+    func finishCurrentTrip() {
+        guard let currentTrip = currentTrip else {
+            return
+        }
+        trips.append(currentTrip)
+    }
+    
+    func addNewDataPoint( location: VehicleLocationModel, ecoScore: VehicleEcoScoreModel ) {
+        guard var currentTrip = currentTrip else {
+            return
+        }
+        currentTrip.tripData.append(DataPoint(timeStamp: Date(), location: location, ecoScore: ecoScore))
+    }
+    
+    func getAllTrips() -> [Trip] {
+        return trips
+    }
+    
+    func getCurrentTrip() -> Trip? {
+        return currentTrip
+    }
 }
