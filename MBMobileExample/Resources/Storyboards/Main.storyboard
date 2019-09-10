@@ -348,7 +348,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_search_black_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-N7-Mal" userLabel="statusImageView">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leaf" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-N7-Mal" userLabel="statusImageView">
                                                                     <rect key="frame" x="0.0" y="5" width="15" height="15"/>
                                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
@@ -503,9 +503,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="carLabel" destination="lID-rc-7E0" id="T72-Nh-1TL"/>
+                                    <outlet property="carLabel" destination="CkV-Ob-G76" id="Cwm-7A-ORk"/>
                                     <outlet property="dateLabel" destination="4E9-yo-C7q" id="Tql-eA-ne5"/>
                                     <outlet property="destinationLabel" destination="uxK-Im-6e7" id="C09-Cq-Adr"/>
+                                    <outlet property="ecoScoreLabel" destination="DeK-l5-uWO" id="vdb-U9-W3X"/>
                                     <outlet property="monthLabel" destination="W3j-cc-3Yw" id="ejq-j2-QYx"/>
                                     <outlet property="originLabel" destination="EQ9-RN-F9b" id="Xd3-ps-0XR"/>
                                     <outlet property="viewForegroundLayer" destination="2mq-Le-6ol" id="xcY-KL-akN"/>
@@ -644,7 +645,6 @@
         <image name="baseline_directions_car_black_24pt" width="24" height="24"/>
         <image name="baseline_more_vert_black_48pt" width="48" height="48"/>
         <image name="baseline_panorama_fish_eye_black_48pt" width="48" height="48"/>
-        <image name="baseline_search_black_48pt" width="48" height="48"/>
         <image name="leaf" width="512" height="512"/>
         <image name="nature" width="1354" height="900"/>
         <image name="zetsche" width="666" height="666"/>

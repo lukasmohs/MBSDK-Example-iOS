@@ -23,9 +23,8 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         var cell = tableView.dequeueReusableCell(withIdentifier: "TripsTableViewCell", for: indexPath) as! TripsTableViewCell
         
         let trip = DataHandler.shared.getAllTrips()[indexPath.row]
-        let origin: String = String(trip.tripData[0].location.latitude) + ", " + String(trip.tripData[0].location.longitude)
-        let destination: String = String(trip.tripData[trip.tripData.count-1].location.latitude) + ", " + String(trip.tripData[trip.tripData.count-1].location.longitude)
-        cell.setTestDetails(car: "benz", origin: origin, destination: destination, date: trip.timeStamp)
+        
+        cell.setTestDetails(trip: trip)
         
         return cell
     }

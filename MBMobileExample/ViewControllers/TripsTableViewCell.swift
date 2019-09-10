@@ -11,6 +11,7 @@ import UIKit
 
 class TripsTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var ecoScoreLabel: UILabel!
     
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var originLabel: UILabel!
@@ -33,14 +34,23 @@ class TripsTableViewCell: UITableViewCell {
         
     }
     
-    func setTestDetails(car: String, origin: String, destination: String, date: Date) {
+    func setTestDetails(trip: Trip) {
+        
+        let origin: String = String(trip.tripData[0].location.latitude) + ", " + String(trip.tripData[0].location.longitude)
+        let destination: String = String(trip.tripData[trip.tripData.count-1].location.latitude) + ", " + String(trip.tripData[trip.tripData.count-1].location.longitude)
+        
         originLabel?.text = origin
         destinationLabel?.text = destination
-        carLabel?.text = car
+        carLabel?.text = "Benz AMG - 63 coupé"
         
-        dateLabel.text = getHoursAndMinutesFromDate(date: date)
-        monthLabel.text = getFormattedDate(date: date)
-        
+        dateLabel.text = getHoursAndMinutesFromDate(date: trip.timeStamp)
+        monthLabel.text = getFormattedDate(date: trip.timeStamp)
+        var averageEcoScore = 0
+        for tripDataPoint in  trip.tripData {
+            averageEcoScore += tripDataPoint.ecoScore.total
+        }
+        let averageEcoScoreFinal = round(Double(averageEcoScore) / Double(trip.tripData.count))
+        ecoScoreLabel.text = String(averageEcoScoreFinal)
     }
     func getFormattedDate(date: Date) -> String{
         let formatter = DateFormatter()
