@@ -5,6 +5,7 @@
 import UIKit
 import MBMobileSDK
 import MBCarKit
+import EFCountingLabel
 
 class HomeViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class HomeViewController: UIViewController {
 	@IBOutlet private weak var carStatusView: CarStatusView!
 	@IBOutlet private weak var commandDoorView: CommandDoorView!
 
+    @IBOutlet weak var co2SavingsLabel: EFCountingLabel!
     @IBOutlet weak var profileImageView: UIImageView!
     // MARK: - Properties
 	
@@ -35,10 +37,16 @@ class HomeViewController: UIViewController {
         profileImageView.clipsToBounds = true
     }
     
+    func startCountingCO2() {
+        co2SavingsLabel.setUpdateBlock { value, label in
+            label.text = String(format: "%.1f%", value)
+        }
+        co2SavingsLabel.countFrom(1, to: 1000, withDuration: 2.0)
+    }
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-        setupProfileView()
+    
 		/// add observer
 		Notification.Name.didChangeVehicleSelection.add(self, selector: #selector(self.didChangeVehicleSelection(notification:)))
 		
@@ -48,6 +56,9 @@ class HomeViewController: UIViewController {
 		self.didChangeVehicleSelection(notification: nil)
 		
 		self.configureCommandDoors()
+        
+        startCountingCO2()
+        setupProfileView()
 	}
     
     @IBAction func gotoLiveViewButtonClicked(_ sender: Any) {
