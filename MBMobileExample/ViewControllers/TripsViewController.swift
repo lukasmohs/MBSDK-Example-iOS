@@ -38,13 +38,14 @@ class TripsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView,  didSelectRowAt indexPath: IndexPath) {
-         self.performSegue(withIdentifier: "showDetail", sender: self)
+        self.segueIndex = indexPath.row
+        self.performSegue(withIdentifier: "showDetail", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let nextViewController = segue.destination as? TripDetailViewController {
-                nextViewController.trip = nil
+                nextViewController.trip = DataHandler.shared.getAllTrips()[segueIndex]
             }
         }
     }

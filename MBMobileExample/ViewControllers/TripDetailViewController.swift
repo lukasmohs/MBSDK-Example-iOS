@@ -23,44 +23,87 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
          self.navigationItem.title = "Trip Details"
         mapView.delegate = self
-        setUpChart()
-        drawPolyline()
+        if let tripData = trip?.tripData {
+            drawPolyline(dataPoints: tripData)
+            setUpChart(dataPoints: tripData)
+        }
         addGradientView()
     }
     
-    func setUpChart() {
+    func setUpChart(dataPoints: [DataPoint]) {
 
-        let series = ChartSeries([0, 6.5, 2, 8, 4.1, 7, -3.1, 10, 8,  4.1, 7, -3.1, 10, 8,  4.1, 7, -3.1, 10, 8,  4.1, 7, -3.1, 10, 8,  4.1, 7, -3.1, 10, 8,  4.1, 7, -3.1, 10, 8,  4.1, 7, -3.1, 10, 8])
-         series.color = ChartColors.greenColor()
-        chartView.add(series)
+        var const:[Double] = []
+        var freeWhl:[Double] = []
+        var bonusRange:[Double] = []
+        var accel:[Double] = []
+        var total:[Double] = []
         
+        for dataPoint in dataPoints {
+            const.append(Double(dataPoint.ecoScore.const))
+            freeWhl.append(Double(dataPoint.ecoScore.freeWhl))
+            bonusRange.append(dataPoint.ecoScore.bonusRange)
+            accel.append(Double(dataPoint.ecoScore.accel))
+            total.append(Double(dataPoint.ecoScore.total))
+        }
+        
+        let constDeries = ChartSeries(const)
+        constDeries.color = ChartColors.greenColor()
+        chartView.add(constDeries)
+        
+        let freeWhlDeries = ChartSeries(freeWhl)
+        freeWhlDeries.color = ChartColors.blueColor()
+        chartView.add(freeWhlDeries)
+        
+        let bonusRangeDeries = ChartSeries(bonusRange)
+        bonusRangeDeries.color = ChartColors.yellowColor()
+        chartView.add(bonusRangeDeries)
+        
+        let accelDeries = ChartSeries(accel)
+        accelDeries.color = ChartColors.yellowColor()
+        chartView.add(accelDeries)
+        
+        let totalDeries = ChartSeries(total)
+        totalDeries.color = ChartColors.redColor()
+        chartView.add(totalDeries)
     }
     
     func addGradientView() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = gradientView.bounds
-        gradientLayer.colors = [UIColor.yellow.cgColor, UIColor.white.cgColor]
+        gradientLayer.colors = [UIColor.green.cgColor, UIColor.red.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradientView.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func drawPolyline() {
-        let point1 = CLLocationCoordinate2DMake(50.115282, 8.651516)
-        let point2 = CLLocationCoordinate2DMake(50.115359, 8.650476)
-        let point3 = CLLocationCoordinate2DMake(50.117538, 8.653677)
-        let point4 = CLLocationCoordinate2DMake(50.120384, 8.659118)
-        let point5 = CLLocationCoordinate2DMake(50.120384, 8.659118)
+    func drawPolyline(dataPoints: [DataPoint]) {
+        for i in 0...dataPoints.count {
+            if i > 0 && i < (dataPoints.count - 1) {
+                addPolyline(firstDataPoint: dataPoints[i], secondDataPoint: dataPoints[i-1])
+            }
+        }
+        if let latitude = dataPoints.first?.location.latitude, let longitude = dataPoints.first?.location.longitude {
+            let point1 = CLLocationCoordinate2DMake(latitude, longitude)
+            
+            UIView.animate(withDuration: 1.5, animations: { () -> Void in
+                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                let region1 = MKCoordinateRegion(center: point1, span: span)
+                self.mapView.setRegion(region1, animated: true)
+            })
+        }
+        
+    }
+        
+        
+    func addPolyline(firstDataPoint: DataPoint, secondDataPoint: DataPoint) {
+        let point1 = CLLocationCoordinate2DMake(firstDataPoint.location.latitude, firstDataPoint.location.longitude)
+        let point2 = CLLocationCoordinate2DMake(secondDataPoint.location.latitude, secondDataPoint.location.longitude)
         
         let points: [CLLocationCoordinate2D]
-        points = [point1, point2, point3, point4, point5]
+        points = [point1, point2]
         
-        let geodesic = MKGeodesicPolyline(coordinates: points, count: 5)
+        let geodesic = MKGeodesicPolyline(coordinates: points, count: 2)
         mapView.addOverlay(geodesic)
-        
-        UIView.animate(withDuration: 1.5, animations: { () -> Void in
-            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-            let region1 = MKCoordinateRegion(center: point1, span: span)
-            self.mapView.setRegion(region1, animated: true)
-        })
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -68,11 +111,22 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
         guard let polyline = overlay as? MKPolyline else {
             return MKOverlayRenderer()
         }
-        
+    
         // Create a specialized polyline renderer and set the polyline properties.
         let polylineRenderer = MKPolylineRenderer(overlay: polyline)
-        polylineRenderer.strokeColor = .green
+        
+        if let ecoScore = self.trip?.tripData.first(where: {$0.location.latitude  == polyline.points()[1].coordinate.latitude && $0.location.longitude  == polyline.points()[1].coordinate.longitude})?.ecoScore.total {
+            polylineRenderer.strokeColor = getColorForEcoScore(score: ecoScore)
+        } else {
+            polylineRenderer.strokeColor = UIColor.black
+        }
+        
         polylineRenderer.lineWidth = 3
         return polylineRenderer
+    }
+    
+    func getColorForEcoScore(score: Int) -> UIColor{
+        var percentage: Double = Double(score) / 100
+        return UIColor(red: CGFloat(1-percentage), green: CGFloat(percentage), blue: 0, alpha: 1)
     }
 }
