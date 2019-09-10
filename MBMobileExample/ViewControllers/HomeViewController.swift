@@ -77,22 +77,22 @@ class HomeViewController: UIViewController {
         view2.badgeName.text = "Bonus Range"
         badgeStackView.addArrangedSubview(view2)
 //        3
-        let image3 = UIImage(named: "zetsche")
+        let image3 = UIImage(named: "round_eco")
         let view3 = BadgeCard.instanceFromNib() as! BadgeCard
         view3.badgeImageView.image = image3
-        view3.badgeName.text = "test"
+        view3.badgeName.text = "Eco Year"
         badgeStackView.addArrangedSubview(view3)
 //        4
-        let image4 = UIImage(named: "zetsche")
+        let image4 = UIImage(named: "round_monetization")
         let view4 = BadgeCard.instanceFromNib() as! BadgeCard
         view4.badgeImageView.image = image4
-        view4.badgeName.text = "test"
+        view4.badgeName.text = "Saver"
         badgeStackView.addArrangedSubview(view4)
 //        5
-        let image5 = UIImage(named: "zetsche")
+        let image5 = UIImage(named: "round_outlined_flag")
         let view5 = BadgeCard.instanceFromNib() as! BadgeCard
         view5.badgeImageView.image = image5
-        view5.badgeName.text = "test"
+        view5.badgeName.text = "Competitor"
         badgeStackView.addArrangedSubview(view5)
         
         
