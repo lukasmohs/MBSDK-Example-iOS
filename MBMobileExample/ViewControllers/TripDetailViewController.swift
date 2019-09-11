@@ -17,6 +17,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     
     var polyLineScoreMap = [MKPolyline: Int] ()
 
+    @IBOutlet weak var ecoScoreOverTimeTitle: UILabel!
     @IBOutlet weak var travelTimeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var chartView: Chart!
@@ -26,6 +27,12 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
          self.navigationItem.title = "Trip Details"
         mapView.delegate = self
+        
+       
+        travelTimeLabel.layer.masksToBounds = true
+        travelTimeLabel.layer.cornerRadius = 8
+        ecoScoreOverTimeTitle.layer.masksToBounds = true
+         ecoScoreOverTimeTitle.layer.cornerRadius = 8
         
         if let formattedDate = trip?.getFormattedDate(), let hoursAndMinutes = trip?.getHoursAndMinutesFromDate(){
             travelTimeLabel.text = formattedDate + " " + hoursAndMinutes
@@ -64,9 +71,9 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
         freeWhlDeries.color = ChartColors.blueColor()
         chartView.add(freeWhlDeries)
         
-        let bonusRangeDeries = ChartSeries(bonusRange)
-        bonusRangeDeries.color = ChartColors.yellowColor()
-        chartView.add(bonusRangeDeries)
+//        let bonusRangeDeries = ChartSeries(bonusRange)
+//        bonusRangeDeries.color = ChartColors.yellowColor()
+//        chartView.add(bonusRangeDeries)
         
         let accelDeries = ChartSeries(accel)
         accelDeries.color = ChartColors.yellowColor()
