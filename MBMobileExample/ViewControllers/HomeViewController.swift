@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
 	private var disposal = Disposal()
 	private var token: MyCarSocketNotificationToken?
 
-	
+	private var savings = 1000
 	// MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -46,6 +46,8 @@ class HomeViewController: UIViewController {
         
         self.configureCommandDoors()
         
+        self.savings = 1000 + Int.random(in: 0 ... 1000)
+        
         startCountingCO2()
         setupProfileView()
         addBadgesToView()
@@ -58,7 +60,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupChartOverView() {
-        let totalDeries = ChartSeries([100,250,310,1200,1123,500,624,554,623,498,823,1298])
+        let totalDeries = ChartSeries([100,250,310,1200,1123,500,624,554,623,498,823,1298, Double(self.savings)])
         totalDeries.color = ChartColors.greenColor()
         chartView.add(totalDeries)
     }
@@ -85,7 +87,7 @@ class HomeViewController: UIViewController {
         co2SavingsLabel.setUpdateBlock { value, label in
             label.text = String(format: "%.1f%", value)
         }
-        let savings = 1000 + Int.random(in: 0 ... 1000)
+        
         co2SavingsLabel.countFrom(1, to: CGFloat(savings), withDuration: 2.0)
     }
     
