@@ -24,8 +24,8 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYa-Z1-Kdb">
-                    <rect key="frame" x="5" y="53" width="60" height="12"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <rect key="frame" x="0.0" y="53" width="70" height="11"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -35,9 +35,9 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KYq-Dp-xoq" secondAttribute="trailing" constant="15" id="AXb-Re-IkU"/>
                 <constraint firstItem="KYq-Dp-xoq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="EUy-V2-hkE"/>
                 <constraint firstItem="gYa-Z1-Kdb" firstAttribute="top" secondItem="KYq-Dp-xoq" secondAttribute="bottom" constant="3" id="XQN-lV-Pis"/>
-                <constraint firstItem="gYa-Z1-Kdb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="bNe-4B-eEa"/>
+                <constraint firstItem="gYa-Z1-Kdb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bNe-4B-eEa"/>
                 <constraint firstItem="KYq-Dp-xoq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="dRf-QP-m3E"/>
-                <constraint firstAttribute="trailing" secondItem="gYa-Z1-Kdb" secondAttribute="trailing" constant="5" id="r5o-Ow-WqR"/>
+                <constraint firstAttribute="trailing" secondItem="gYa-Z1-Kdb" secondAttribute="trailing" id="r5o-Ow-WqR"/>
                 <constraint firstItem="gYa-Z1-Kdb" firstAttribute="top" secondItem="KYq-Dp-xoq" secondAttribute="bottom" constant="3" id="yKc-d7-Tpg"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
