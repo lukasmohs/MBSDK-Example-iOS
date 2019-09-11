@@ -14,6 +14,7 @@ import ABGaugeViewKit
 
 class LiveViewController: UIViewController {
 
+    @IBOutlet weak var gradientHideView: UIView!
     private var disposal = Disposal()
     private var token: MyCarSocketNotificationToken?
     @IBOutlet weak var scrollView: UIScrollView!
@@ -36,8 +37,17 @@ class LiveViewController: UIViewController {
         self.observeVehicleStatus()
         self.didChangeVehicleSelection(notification: nil)
         self.addRecommendationsToView()
+        self.addGradientView()
     }
-
+    func addGradientView(){
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = gradientHideView.bounds
+//        gradientLayer.colors = [ UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor, UIColor(red: 1, green: 1, blue: 1, alpha: 0).cgColor]
+        gradientLayer.colors = [ UIColor.white.cgColor, UIColor(red: 1, green: 1, blue: 1, alpha: 0).cgColor]
+        gradientHideView.layer.insertSublayer(gradientLayer, at: 0)
+        
+    }
+    
     func addRecommendationsToView() {
         recommendationsStackView.axis = .vertical
         recommendationsStackView.alignment = .center
@@ -88,7 +98,7 @@ class LiveViewController: UIViewController {
         }
         let recommendationView = RecommendationView.instanceFromNib() as! RecommendationView
         recommendationView.recommendationText.text = text
-        recommendationView.recommendationBackgroundView.layer.cornerRadius = 5;
+        recommendationView.recommendationBackgroundView.layer.cornerRadius = 8;
         recommendationView.recommendationBackgroundView.layer.masksToBounds = true;
         recommendationsStackView.addArrangedSubview(recommendationView)
         self.recommendationViews.append(recommendationView)
