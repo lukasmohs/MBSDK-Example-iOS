@@ -11,10 +11,11 @@ import UIKit
 import MBMobileSDK
 import MBCarKit
 import ABGaugeViewKit
+import EFCountingLabel
 
 class LiveViewController: UIViewController {
 
-    @IBOutlet weak var liveEcoScoreLabel: UILabel!
+    @IBOutlet weak var liveEcoScoreLabel: EFCountingLabel!
     
     @IBOutlet weak var drivingRecommendattionsLabel: UILabel!
     
@@ -40,6 +41,8 @@ class LiveViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title
+            = "Driving Mode"
         Notification.Name.didChangeVehicleSelection.add(self, selector: #selector(self.didChangeVehicleSelection(notification:)))
         self.observeVehicleStatus()
         self.didChangeVehicleSelection(notification: nil)
@@ -51,6 +54,10 @@ class LiveViewController: UIViewController {
         
         drivingRecommendattionsLabel.layer.cornerRadius = 8;
         drivingRecommendattionsLabel.layer.masksToBounds = true;
+        
+        liveEcoScoreLabel.setUpdateBlock { value, label in
+            label.text = String(format: "%.f%", value)
+        }
     }
     func addGradientView(){
         let gradientLayer = CAGradientLayer()
@@ -131,6 +138,8 @@ class LiveViewController: UIViewController {
         self.disposal.removeAll()
         MBCarKit.socketService.unregisterAndDisconnectIfPossible(token: self.token)
     }
+    
+    
 
     /// Starts oberserving some data from the socket
     private func handle(socketObservable: SocketObservableProtocol) {
@@ -142,6 +151,8 @@ class LiveViewController: UIViewController {
                 }
                 print("Eco score total: \(ecoScoreTotalValue)")
                 self?.speedometerView.needleValue = CGFloat(ecoScoreTotalValue)
+                
+                self?.liveEcoScoreLabel.countFromCurrentValueTo(CGFloat(ecoScoreTotalValue), withDuration: 0.5)
                 let location = socketObservable.location.current
                 DataHandler.shared.addNewDataPoint(location: location, ecoScore: ecoScore)
                 guard let ecoScoreAccel = ecoScore.accel.value else {

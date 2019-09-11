@@ -319,10 +319,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnq-kj-OAs">
-                                <rect key="frame" x="0.0" y="340" width="320" height="228"/>
+                                <rect key="frame" x="0.0" y="340" width="320" height="233"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oRL-nn-cFy" userLabel="RecommendationsStackView">
-                                        <rect key="frame" x="0.0" y="-5.5" width="320" height="239"/>
+                                        <rect key="frame" x="0.0" y="-3" width="320" height="239"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="239" id="t8q-aw-pol"/>
                                         </constraints>
@@ -337,7 +337,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rJ-xp-2H5">
-                                <rect key="frame" x="0.0" y="324" width="320" height="114"/>
+                                <rect key="frame" x="0.0" y="324" width="320" height="116.5"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJr-pK-kEz" customClass="ABGaugeView" customModule="ABGaugeViewKit">
@@ -364,8 +364,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="blinkAnimate" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jep-fj-xMD" customClass="EFCountingLabel" customModule="EFCountingLabel">
+                                <rect key="frame" x="152" y="265" width="16.5" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driving Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-kn-BrO">
-                                <rect key="frame" x="40" y="332" width="240" height="26"/>
+                                <rect key="frame" x="40" y="334.5" width="240" height="26"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.41176470590000003" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -383,8 +389,9 @@
                         <constraints>
                             <constraint firstItem="7rJ-xp-2H5" firstAttribute="height" secondItem="jnq-kj-OAs" secondAttribute="height" multiplier="0.5" id="0dQ-Cz-qNW"/>
                             <constraint firstItem="sJr-pK-kEz" firstAttribute="centerX" secondItem="ssc-yu-djY" secondAttribute="centerX" id="35F-Tw-si8"/>
+                            <constraint firstItem="7rJ-xp-2H5" firstAttribute="top" secondItem="jep-fj-xMD" secondAttribute="bottom" constant="27" id="6yc-Kd-xXS"/>
                             <constraint firstItem="jnq-kj-OAs" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" id="B9G-mS-qlw"/>
-                            <constraint firstItem="jnq-kj-OAs" firstAttribute="bottom" secondItem="Pua-OR-T2Y" secondAttribute="bottom" id="IUp-85-UjE"/>
+                            <constraint firstItem="jnq-kj-OAs" firstAttribute="bottom" secondItem="Pua-OR-T2Y" secondAttribute="bottom" constant="5" id="IUp-85-UjE"/>
                             <constraint firstItem="7rJ-xp-2H5" firstAttribute="trailing" secondItem="Pua-OR-T2Y" secondAttribute="trailing" id="Kif-7W-xaH"/>
                             <constraint firstItem="QzP-kn-BrO" firstAttribute="bottom" secondItem="7rJ-xp-2H5" secondAttribute="bottom" constant="-80" id="Rvk-go-qJe"/>
                             <constraint firstItem="7rJ-xp-2H5" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" id="Rz2-dK-RFa"/>
@@ -395,16 +402,16 @@
                             <constraint firstItem="QzP-kn-BrO" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" constant="40" id="cIt-Ja-zKa"/>
                             <constraint firstItem="ibt-sF-H7U" firstAttribute="top" secondItem="Pua-OR-T2Y" secondAttribute="top" constant="20" id="eCt-k2-RpD"/>
                             <constraint firstItem="sJr-pK-kEz" firstAttribute="top" secondItem="Pua-OR-T2Y" secondAttribute="top" constant="64" id="gmo-gx-btn"/>
-                            <constraint firstItem="Pua-OR-T2Y" firstAttribute="bottom" secondItem="jnq-kj-OAs" secondAttribute="bottom" id="gtC-5o-Ugv"/>
                             <constraint firstItem="7rJ-xp-2H5" firstAttribute="top" secondItem="sJr-pK-kEz" secondAttribute="bottom" id="kJA-lS-8XX"/>
                             <constraint firstItem="Pua-OR-T2Y" firstAttribute="trailing" secondItem="jnq-kj-OAs" secondAttribute="trailing" id="rAs-La-DkO"/>
+                            <constraint firstItem="jep-fj-xMD" firstAttribute="centerX" secondItem="sJr-pK-kEz" secondAttribute="centerX" id="wMy-oM-Tuy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pua-OR-T2Y"/>
                     </view>
                     <connections>
                         <outlet property="drivingRecommendattionsLabel" destination="QzP-kn-BrO" id="HUx-6c-Sxh"/>
                         <outlet property="gradientHideView" destination="7rJ-xp-2H5" id="Xwd-tj-hcH"/>
-                        <outlet property="liveEcoScoreLabel" destination="ibt-sF-H7U" id="7J3-z3-YmQ"/>
+                        <outlet property="liveEcoScoreLabel" destination="jep-fj-xMD" id="Plu-wI-CNQ"/>
                         <outlet property="recommendationsStackView" destination="oRL-nn-cFy" id="6Ri-tf-FsI"/>
                         <outlet property="scrollView" destination="jnq-kj-OAs" id="aJF-rD-FA3"/>
                         <outlet property="speedometerView" destination="sJr-pK-kEz" id="Qli-A6-VsK"/>
@@ -870,6 +877,7 @@
         <image name="zetsche" width="666" height="666"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Pkd-FP-feA"/>
         <segue reference="td5-DO-St2"/>
     </inferredMetricsTieBreakers>
 </document>
