@@ -91,7 +91,12 @@ class LiveViewController: UIViewController {
                     let currentStatistics = socketObservable.statistics.current
                     DataHandler.shared.finishCurrentTrip(statistics: currentStatistics)
                     self?.segueIndex = DataHandler.shared.trips.count-1
-                    self?.performSegue(withIdentifier: "showDetailFromLive", sender: self)
+                    let alert = UIAlertController(title: "Engine stopped", message: "The enigine just stopped. You are now forwarded to the detail view of your ride.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                        action in
+                        self?.performSegue(withIdentifier: "showDetailFromLive", sender: self)
+                    }))
+                    self?.present(alert, animated: true)
                 }
             case .initial(let engine):
                 print("Engine initial state")

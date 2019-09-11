@@ -259,8 +259,13 @@ class HomeViewController: UIViewController {
                     print("Engine stopped")
                 } else {
                     print("Engine started")
-                    self?.performSegue(withIdentifier: "showLiveView", sender: self)
-                    DataHandler.shared.startNewTrip(name: "Test Trip")
+                    let alert = UIAlertController(title: "Engine started", message: "The enigine just started. You are now forwarded to the live view of your ride.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                        action in
+                        self?.performSegue(withIdentifier: "showLiveView", sender: self)
+                        DataHandler.shared.startNewTrip(name: "Test Trip")
+                    }))
+                    self?.present(alert, animated: true)
                 }
             case .initial(let engine):
                 print("Engine initial state")
