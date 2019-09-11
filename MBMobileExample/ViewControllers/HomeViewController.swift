@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupChartOverView() {
-        let totalDeries = ChartSeries([1,2,3,12,11,5,6,5,6,3,2,4,5,7,8,12])
+        let totalDeries = ChartSeries([100,250,310,1200,1123,500,624,554,623,498,823,1298])
         totalDeries.color = ChartColors.greenColor()
         chartView.add(totalDeries)
     }
