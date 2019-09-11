@@ -103,7 +103,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
             let point1 = CLLocationCoordinate2DMake(latitude, longitude)
             
             UIView.animate(withDuration: 1.5, animations: { () -> Void in
-                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
                 let region1 = MKCoordinateRegion(center: point1, span: span)
                 self.mapView.setRegion(region1, animated: true)
             })

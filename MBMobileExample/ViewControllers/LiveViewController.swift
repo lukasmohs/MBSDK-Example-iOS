@@ -14,6 +14,10 @@ import ABGaugeViewKit
 
 class LiveViewController: UIViewController {
 
+    @IBOutlet weak var liveEcoScoreLabel: UILabel!
+    
+    @IBOutlet weak var drivingRecommendattionsLabel: UILabel!
+    
     @IBOutlet weak var gradientHideView: UIView!
     private var disposal = Disposal()
     private var token: MyCarSocketNotificationToken?
@@ -41,6 +45,12 @@ class LiveViewController: UIViewController {
         self.didChangeVehicleSelection(notification: nil)
         self.addRecommendationsToView()
         self.addGradientView()
+        
+        liveEcoScoreLabel.layer.cornerRadius = 8;
+        liveEcoScoreLabel.layer.masksToBounds = true;
+        
+        drivingRecommendattionsLabel.layer.cornerRadius = 8;
+        drivingRecommendattionsLabel.layer.masksToBounds = true;
     }
     func addGradientView(){
         let gradientLayer = CAGradientLayer()

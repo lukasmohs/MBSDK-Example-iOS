@@ -318,20 +318,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="124km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-LN-EL5">
-                                <rect key="frame" x="16" y="42" width="66" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-If-KSU">
-                                <rect key="frame" x="262" y="42" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnq-kj-OAs">
                                 <rect key="frame" x="0.0" y="340" width="320" height="228"/>
                                 <subviews>
@@ -378,6 +364,20 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="blinkAnimate" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driving Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzP-kn-BrO">
+                                <rect key="frame" x="40" y="332" width="240" height="26"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.41176470590000003" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Eco Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibt-sF-H7U">
+                                <rect key="frame" x="40" y="40" width="134" height="26"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.41176470590000003" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -386,10 +386,14 @@
                             <constraint firstItem="jnq-kj-OAs" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" id="B9G-mS-qlw"/>
                             <constraint firstItem="jnq-kj-OAs" firstAttribute="bottom" secondItem="Pua-OR-T2Y" secondAttribute="bottom" id="IUp-85-UjE"/>
                             <constraint firstItem="7rJ-xp-2H5" firstAttribute="trailing" secondItem="Pua-OR-T2Y" secondAttribute="trailing" id="Kif-7W-xaH"/>
+                            <constraint firstItem="QzP-kn-BrO" firstAttribute="bottom" secondItem="7rJ-xp-2H5" secondAttribute="bottom" constant="-80" id="Rvk-go-qJe"/>
                             <constraint firstItem="7rJ-xp-2H5" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" id="Rz2-dK-RFa"/>
+                            <constraint firstItem="ibt-sF-H7U" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" constant="40" id="Wtr-NN-o2d"/>
                             <constraint firstItem="jnq-kj-OAs" firstAttribute="top" secondItem="sJr-pK-kEz" secondAttribute="bottom" constant="16" id="a2b-Is-Eaz"/>
                             <constraint firstItem="jnq-kj-OAs" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" id="bBz-Ss-2sj"/>
                             <constraint firstItem="jnq-kj-OAs" firstAttribute="trailing" secondItem="Pua-OR-T2Y" secondAttribute="trailing" id="bzr-Wp-SMK"/>
+                            <constraint firstItem="QzP-kn-BrO" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" constant="40" id="cIt-Ja-zKa"/>
+                            <constraint firstItem="ibt-sF-H7U" firstAttribute="top" secondItem="Pua-OR-T2Y" secondAttribute="top" constant="20" id="eCt-k2-RpD"/>
                             <constraint firstItem="sJr-pK-kEz" firstAttribute="top" secondItem="Pua-OR-T2Y" secondAttribute="top" constant="64" id="gmo-gx-btn"/>
                             <constraint firstItem="Pua-OR-T2Y" firstAttribute="bottom" secondItem="jnq-kj-OAs" secondAttribute="bottom" id="gtC-5o-Ugv"/>
                             <constraint firstItem="7rJ-xp-2H5" firstAttribute="top" secondItem="sJr-pK-kEz" secondAttribute="bottom" id="kJA-lS-8XX"/>
@@ -398,7 +402,9 @@
                         <viewLayoutGuide key="safeArea" id="Pua-OR-T2Y"/>
                     </view>
                     <connections>
+                        <outlet property="drivingRecommendattionsLabel" destination="QzP-kn-BrO" id="HUx-6c-Sxh"/>
                         <outlet property="gradientHideView" destination="7rJ-xp-2H5" id="Xwd-tj-hcH"/>
+                        <outlet property="liveEcoScoreLabel" destination="ibt-sF-H7U" id="7J3-z3-YmQ"/>
                         <outlet property="recommendationsStackView" destination="oRL-nn-cFy" id="6Ri-tf-FsI"/>
                         <outlet property="scrollView" destination="jnq-kj-OAs" id="aJF-rD-FA3"/>
                         <outlet property="speedometerView" destination="sJr-pK-kEz" id="Qli-A6-VsK"/>
@@ -864,7 +870,6 @@
         <image name="zetsche" width="666" height="666"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IRH-yB-1Fd"/>
         <segue reference="td5-DO-St2"/>
     </inferredMetricsTieBreakers>
 </document>
