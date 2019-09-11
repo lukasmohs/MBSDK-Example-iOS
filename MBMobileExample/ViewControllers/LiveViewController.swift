@@ -18,7 +18,9 @@ class LiveViewController: UIViewController {
     private var token: MyCarSocketNotificationToken?
     
     @IBOutlet weak var speedometerView: ABGaugeView!
-
+    
+    var segueIndex = -1
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -88,12 +90,22 @@ class LiveViewController: UIViewController {
                     print("Engine stopped")
                     let currentStatistics = socketObservable.statistics.current
                     DataHandler.shared.finishCurrentTrip(statistics: currentStatistics)
+                    self?.segueIndex = DataHandler.shared.trips.count-1
+                    self?.performSegue(withIdentifier: "showDetailFromLive", sender: self)
                 }
             case .initial(let engine):
                 print("Engine initial state")
             }
         }.add(to: &self.disposal)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailFromLive" {
+            if let nextViewController = segue.destination as? TripDetailViewController {
+                nextViewController.trip = DataHandler.shared.getAllTrips()[segueIndex]
+            }
+        }
     }
 
     /// Example implementation how to create the connection and observes the status of the vehicle
