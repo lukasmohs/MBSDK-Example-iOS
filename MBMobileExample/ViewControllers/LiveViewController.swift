@@ -139,10 +139,12 @@ class LiveViewController: UIViewController {
         MBCarKit.socketService.unregisterAndDisconnectIfPossible(token: self.token)
     }
     
-    
+    // swiftlint:disable all
 
     /// Starts oberserving some data from the socket
+            // swiftlint:disable: all
     private func handle(socketObservable: SocketObservableProtocol) {
+                // swiftlint:disable:next line_length
         socketObservable.ecoScore.observe { [weak self] (state) in
             switch state {
             case .updated(let ecoScore):
@@ -159,13 +161,22 @@ class LiveViewController: UIViewController {
                     return
                 }
                 if ecoScoreAccel < 20 {
-                    self?.createRecommendationView(text: "Drive slower!")
+                    if Int.random(in: 0 ..< 100) > 50 {
+                         self?.createRecommendationView(text: "Drive slower ⛑")
+                    } else {
+                         self?.createRecommendationView(text: "No rush 🚑🚑")
+                    }
+                   
                 }
                 guard let ecoScoreConst = ecoScore.const.value else {
                     return
                 }
                 if ecoScoreConst < 20 {
-                    self?.createRecommendationView(text: "More predicitive driving!")
+                    if Int.random(in: 0 ..< 100) > 50 {
+                        self?.createRecommendationView(text: "More predicitive driving 🤓")
+                    } else {
+                        self?.createRecommendationView(text: "Less speed in the curve 🤮")
+                    }
                 }
                 guard let ecoScoreFreeWhl = ecoScore.freeWhl.value else {
                     return

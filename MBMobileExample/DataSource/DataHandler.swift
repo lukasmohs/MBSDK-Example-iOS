@@ -83,19 +83,21 @@ class DataHandler {
                 print("[Error] Current trip is nil")
                 return
         }
-        if(trips.count == 0){
-            currentTrip.origin = "Frankfurt Prudi"
-            currentTrip.destination = "Offenbach Brudi"
-        } else if(trips.count == 1 ){
-            currentTrip.origin = "Berlin City"
-            currentTrip.destination = "Kreuzberg"
-        } else if ( trips.count == 2){
-            currentTrip.origin = "München"
-            currentTrip.destination = "Starnberg"
-        } else {
-            currentTrip.origin = "Regensburg"
-            currentTrip.destination = "Neutraubling"
-        }
+        currentTrip.origin = "Frankfurt Flughafen"
+        currentTrip.destination = "Frankfurt Neu-Isenburg"
+        
+//        if(trips.count == 0){
+//            
+//        } else if(trips.count == 1 ){
+//            currentTrip.origin = "Berlin City"
+//            currentTrip.destination = "Kreuzberg"
+//        } else if ( trips.count == 2){
+//            currentTrip.origin = "München"
+//            currentTrip.destination = "Starnberg"
+//        } else {
+//            currentTrip.origin = "Regensburg"
+//            currentTrip.destination = "Neutraubling"
+//        }
         //let origin = currentTrip.tripData[0].location
         //let destination = currentTrip.tripData[currentTrip.tripData.count-1].location
         //tranlateCoordinates(origin: origin, destination: destination)

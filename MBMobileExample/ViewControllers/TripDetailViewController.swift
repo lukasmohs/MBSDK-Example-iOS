@@ -17,6 +17,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     
     var polyLineScoreMap = [MKPolyline: Int] ()
 
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var ecoScoreOverTimeTitle: UILabel!
     @IBOutlet weak var travelTimeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -28,6 +29,9 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
          self.navigationItem.title = "Trip Details"
         mapView.delegate = self
         
+        UIView.animate(withDuration: 5.0) {
+            self.progressBar.setProgress(1, animated: true)
+        }
        
         travelTimeLabel.layer.masksToBounds = true
         travelTimeLabel.layer.cornerRadius = 8
