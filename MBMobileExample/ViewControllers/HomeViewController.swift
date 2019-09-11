@@ -6,12 +6,15 @@ import UIKit
 import MBMobileSDK
 import MBCarKit
 import EFCountingLabel
+import SwiftChart
+import PopupDialog
 
 class HomeViewController: UIViewController {
 
 	// MARK: - IBOutlets
 	
-	@IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet weak var chartView: Chart!
+    @IBOutlet private weak var scrollView: UIScrollView!
 	@IBOutlet private weak var contentStackView: UIStackView!
 	@IBOutlet private weak var carImageView: CarImageView!
 	@IBOutlet private weak var carStatusView: CarStatusView!
@@ -30,7 +33,6 @@ class HomeViewController: UIViewController {
 	
 	// MARK: - View Lifecycle
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +50,17 @@ class HomeViewController: UIViewController {
         setupProfileView()
         addBadgesToView()
         setupSavingsView()
+        setupChartOverView()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openProfileDetailInfo(tapGestureRecognizer:)))
+        profileImageView.isUserInteractionEnabled = true
+        profileImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    func setupChartOverView() {
+        let totalDeries = ChartSeries([1,2,3,12,11,5,6,5,6,3,2,4,5,7,8,12])
+        totalDeries.color = ChartColors.greenColor()
+        chartView.add(totalDeries)
     }
 	
     func setupProfileView() {
@@ -138,6 +151,34 @@ class HomeViewController: UIViewController {
 //            self.scrollView.layoutIfNeeded()
 //        }
 	}
+    
+    @objc func openProfileDetailInfo(tapGestureRecognizer: UITapGestureRecognizer) {
+        // Prepare the popup assets
+        let title = "Hallo Dieter!"
+        let message = "Great to see you here"
+        let image = UIImage(named: "zetsche")
+        
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: message, image: image)
+        
+        // Create buttons
+        let buttonOne = CancelButton(title: "CANCEL") {
+            print("You canceled the car dialog.")
+        }
+        
+        // This button will not the dismiss the dialog
+        let buttonTwo = DefaultButton(title: "LOGOUT", dismissOnTap: false) {
+            print("What a beauty!")
+        }
+    
+        // Add buttons to dialog
+        // Alternatively, you can use popup.addButton(buttonOne)
+        // to add a single button
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: true, completion: nil)
+    }
     
     deinit {
         LOG.V()

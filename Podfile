@@ -12,6 +12,7 @@ def pods
   pod 'EFCountingLabel'
   pod 'ABGaugeViewKit'
   pod 'SwiftChart'
+  pod 'PopupDialog', '~> 1.1'
   # data
     
   # layout / ui
