@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var positionCounterMBChallenge: EFCountingLabel!
     
+    @IBOutlet weak var tripsTitle: UILabel!
+    @IBOutlet weak var firstChallengeView: UIView!
     
     @IBOutlet weak var challengesTitle: UILabel!
     @IBOutlet weak var sucessStoryTitle: UILabel!
@@ -68,6 +70,11 @@ class HomeViewController: UIViewController {
         sucessStoryTitle.layer.cornerRadius = 5
         challengesTitle.layer.masksToBounds = true
         challengesTitle.layer.cornerRadius = 5
+        tripsTitle.layer.masksToBounds = true
+        tripsTitle.layer.cornerRadius = 5
+        
+        firstChallengeView.layer.masksToBounds = true
+        firstChallengeView.layer.cornerRadius = 8
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openProfileDetailInfo(tapGestureRecognizer:)))
         profileImageView.isUserInteractionEnabled = true
@@ -103,7 +110,7 @@ class HomeViewController: UIViewController {
             label.text = String(format: "%.f%", value)
         }
         
-        co2SavingsLabel.countFrom(1, to: CGFloat(50), withDuration: 4.0)
+        positionCounterMBChallenge.countFrom(1, to: CGFloat(50), withDuration: 4.0)
     }
     
     func startCountingCO2() {
