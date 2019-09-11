@@ -57,8 +57,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhc-YP-API">
-                                                <rect key="frame" x="8" y="28" width="158" height="30"/>
-                                                <state key="normal" title="GOTO LIVE VIEW TEST"/>
+                                                <rect key="frame" x="8" y="28" width="118" height="30"/>
+                                                <state key="normal" title="GOTO LIVE VIEW">
+                                                    <color key="titleColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="gotoLiveViewButtonClicked:" destination="wCT-eg-6bI" eventType="touchUpInside" id="Yds-2L-sdF"/>
                                                 </connections>
@@ -79,9 +81,9 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="kg CO2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwU-L5-l5K">
-                                                        <rect key="frame" x="66" y="41" width="54.5" height="19.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Eco Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwU-L5-l5K">
+                                                        <rect key="frame" x="66" y="41" width="111" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -122,7 +124,6 @@
                                             <constraint firstItem="0ZG-Rx-g84" firstAttribute="leading" secondItem="GDi-Ui-Hs1" secondAttribute="leading" id="1HG-d2-CnY"/>
                                             <constraint firstItem="0ZG-Rx-g84" firstAttribute="bottom" secondItem="3xm-Uv-AYQ" secondAttribute="bottom" id="1aC-RG-Wd7"/>
                                             <constraint firstItem="he9-Ok-qUC" firstAttribute="top" secondItem="bPT-VT-J2E" secondAttribute="bottom" constant="20" id="8Sa-b5-FKw"/>
-                                            <constraint firstAttribute="trailing" secondItem="fhc-YP-API" secondAttribute="trailing" constant="154" id="9uT-kx-WjM"/>
                                             <constraint firstItem="0ZG-Rx-g84" firstAttribute="leading" secondItem="Fl2-21-98M" secondAttribute="leading" constant="20" id="Azu-8j-sya"/>
                                             <constraint firstItem="0HO-PT-rpQ" firstAttribute="bottom" secondItem="he9-Ok-qUC" secondAttribute="bottom" constant="-65" id="Dv8-DN-no8"/>
                                             <constraint firstItem="bPT-VT-J2E" firstAttribute="centerX" secondItem="Fl2-21-98M" secondAttribute="centerX" id="Ftu-0Q-JQi"/>
@@ -141,6 +142,7 @@
                                             <constraint firstItem="GDi-Ui-Hs1" firstAttribute="leading" secondItem="Fl2-21-98M" secondAttribute="leading" constant="20" id="gz6-l6-qie"/>
                                             <constraint firstItem="3xm-Uv-AYQ" firstAttribute="top" secondItem="Fl2-21-98M" secondAttribute="topMargin" id="iif-x2-XaX"/>
                                             <constraint firstItem="he9-Ok-qUC" firstAttribute="leading" secondItem="Fl2-21-98M" secondAttribute="leading" constant="20" id="laU-Gh-esz"/>
+                                            <constraint firstItem="fhc-YP-API" firstAttribute="leading" secondItem="Fl2-21-98M" secondAttribute="leading" constant="8" id="pOD-WM-tLn"/>
                                             <constraint firstAttribute="trailing" secondItem="he9-Ok-qUC" secondAttribute="trailing" constant="20" id="rbb-uY-hCm"/>
                                         </constraints>
                                     </view>
@@ -698,7 +700,7 @@
         <image name="zetsche" width="666" height="666"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IRH-yB-1Fd"/>
+        <segue reference="Pkd-FP-feA"/>
         <segue reference="td5-DO-St2"/>
     </inferredMetricsTieBreakers>
 </document>
