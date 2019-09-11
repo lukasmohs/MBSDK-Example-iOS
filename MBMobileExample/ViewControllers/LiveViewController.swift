@@ -46,27 +46,27 @@ class LiveViewController: UIViewController {
 
         stackViewHeightConstraint.constant += CGFloat(3 * 20)
 
-        let recommendationView1 = RecommendationView.instanceFromNib() as! RecommendationView
-        recommendationView1.recommendationText.text = "Break earlier!"
-        recommendationView1.recommendationBackgroundView.layer.cornerRadius = 5;
-        recommendationView1.recommendationBackgroundView.layer.masksToBounds = true;
-        recommendationsStackView.addArrangedSubview(recommendationView1)
-
-        let recommendationView2 = RecommendationView.instanceFromNib() as! RecommendationView
-        recommendationView2.recommendationText.text = "Accelerate!"
-        recommendationView2.recommendationBackgroundView.layer.cornerRadius = 5;
-        recommendationView2.recommendationBackgroundView.layer.masksToBounds = true;
-        recommendationsStackView.addArrangedSubview(recommendationView2)
-
-        let recommendationView3 = RecommendationView.instanceFromNib() as! RecommendationView
-        recommendationView3.recommendationText.text = "Drive slower!"
-        recommendationView3.recommendationBackgroundView.layer.cornerRadius = 5;
-        recommendationView3.recommendationBackgroundView.layer.masksToBounds = true;
-        recommendationsStackView.addArrangedSubview(recommendationView3)
-
-        recommendationViews.append(recommendationView1)
-        recommendationViews.append(recommendationView2)
-        recommendationViews.append(recommendationView3)
+//        let recommendationView1 = RecommendationView.instanceFromNib() as! RecommendationView
+//        recommendationView1.recommendationText.text = "Break earlier!"
+//        recommendationView1.recommendationBackgroundView.layer.cornerRadius = 5
+//        recommendationView1.recommendationBackgroundView.layer.masksToBounds = true
+//        recommendationsStackView.addArrangedSubview(recommendationView1)
+//
+//        let recommendationView2 = RecommendationView.instanceFromNib() as! RecommendationView
+//        recommendationView2.recommendationText.text = "Accelerate!"
+//        recommendationView2.recommendationBackgroundView.layer.cornerRadius = 5
+//        recommendationView2.recommendationBackgroundView.layer.masksToBounds = true
+//        recommendationsStackView.addArrangedSubview(recommendationView2)
+//
+//        let recommendationView3 = RecommendationView.instanceFromNib() as! RecommendationView
+//        recommendationView3.recommendationText.text = "Drive slower!"
+//        recommendationView3.recommendationBackgroundView.layer.cornerRadius = 5
+//        recommendationView3.recommendationBackgroundView.layer.masksToBounds = true
+//        recommendationsStackView.addArrangedSubview(recommendationView3)
+//
+//        recommendationViews.append(recommendationView1)
+//        recommendationViews.append(recommendationView2)
+//        recommendationViews.append(recommendationView3)
         //recommendationView1.isHidden = true
 
         let spacerView = UIView()
