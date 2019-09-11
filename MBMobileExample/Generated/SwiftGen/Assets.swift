@@ -99,6 +99,7 @@ internal enum Asset {
   internal static let baselineTrendingUpBlack48pt = ImageAsset(name: "baseline_trending_up_black_48pt")
   internal static let baselineVisibilityBlack48pt = ImageAsset(name: "baseline_visibility_black_48pt")
   internal static let baselineVpnKeyBlack48pt = ImageAsset(name: "baseline_vpn_key_black_48pt")
+  internal static let icon120 = ImageAsset(name: "icon120")
   internal static let leaf = ImageAsset(name: "leaf")
   internal static let mainBg = ImageAsset(name: "main-bg")
   internal static let nature = ImageAsset(name: "nature")

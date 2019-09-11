@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2713994D23282DA0002F0416 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713994C23282DA0002F0416 /* GradientView.swift */; };
+		2745CE882328DD2C00E32E9E /* icon_76pt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2745CE872328DD2C00E32E9E /* icon_76pt@2x.png */; };
 		2761A7582328392B0002E088 /* RecommendationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2761A7572328392B0002E088 /* RecommendationView.xib */; };
 		27B31C542327CC0F00E95728 /* Speedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B31C532327CC0F00E95728 /* Speedometer.storyboard */; };
 		27D70BFA2327F82F0049940B /* BadgeCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D70BF82327F82F0049940B /* BadgeCard.xib */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		2713994C23282DA0002F0416 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2745CE872328DD2C00E32E9E /* icon_76pt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_76pt@2x.png"; sourceTree = "<group>"; };
 		2761A7572328392B0002E088 /* RecommendationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationView.xib; sourceTree = "<group>"; };
 		27B31C532327CC0F00E95728 /* Speedometer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speedometer.storyboard; sourceTree = "<group>"; };
 		27D70BF82327F82F0049940B /* BadgeCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeCard.xib; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				99266875230156C10065BE53 /* ViewControllers */,
 				991B4317230189F4003D4B26 /* Views */,
 				99266860230154B00065BE53 /* Info.plist */,
+				2745CE872328DD2C00E32E9E /* icon_76pt@2x.png */,
 			);
 			path = MBMobileExample;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				991B431F23018F2B003D4B26 /* CarStatusView.xib in Resources */,
 				9926685C230154B00065BE53 /* Assets.xcassets in Resources */,
 				991B43282301A134003D4B26 /* Localizable.strings in Resources */,
+				2745CE882328DD2C00E32E9E /* icon_76pt@2x.png in Resources */,
 				9926686A2301562E0065BE53 /* Main.storyboard in Resources */,
 				2761A7582328392B0002E088 /* RecommendationView.xib in Resources */,
 				991B432C2301A13D003D4B26 /* InfoPlist.strings in Resources */,
@@ -597,7 +601,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4X7Z6AL43R;
+				DEVELOPMENT_TEAM = 9FD38958WM;
 				INFOPLIST_FILE = MBMobileExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -619,7 +623,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4X7Z6AL43R;
+				DEVELOPMENT_TEAM = 9FD38958WM;
 				INFOPLIST_FILE = MBMobileExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
