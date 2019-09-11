@@ -12,7 +12,14 @@ import PopupDialog
 class HomeViewController: UIViewController {
 
 	// MARK: - IBOutlets
-	
+    
+    @IBOutlet weak var positionCounterMBChallenge: EFCountingLabel!
+    
+    
+    @IBOutlet weak var challengesTitle: UILabel!
+    @IBOutlet weak var sucessStoryTitle: UILabel!
+    @IBOutlet weak var ecoProgressTitle: UILabel!
+    
     @IBOutlet weak var chartView: Chart!
     @IBOutlet private weak var scrollView: UIScrollView!
 	@IBOutlet private weak var contentStackView: UIStackView!
@@ -53,6 +60,14 @@ class HomeViewController: UIViewController {
         addBadgesToView()
         setupSavingsView()
         setupChartOverView()
+        startCounterChallengePos()
+        
+        ecoProgressTitle.layer.masksToBounds = true
+        ecoProgressTitle.layer.cornerRadius = 5
+        sucessStoryTitle.layer.masksToBounds = true
+        sucessStoryTitle.layer.cornerRadius = 5
+        challengesTitle.layer.masksToBounds = true
+        challengesTitle.layer.cornerRadius = 5
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openProfileDetailInfo(tapGestureRecognizer:)))
         profileImageView.isUserInteractionEnabled = true
@@ -81,6 +96,14 @@ class HomeViewController: UIViewController {
         savingsView.layer.borderColor = UIColor.white.cgColor
         savingsView.layer.cornerRadius = 20
         savingsView.clipsToBounds = true
+    }
+    
+    func startCounterChallengePos(){
+        positionCounterMBChallenge.setUpdateBlock { value, label in
+            label.text = String(format: "%.f%", value)
+        }
+        
+        co2SavingsLabel.countFrom(1, to: CGFloat(50), withDuration: 4.0)
     }
     
     func startCountingCO2() {
