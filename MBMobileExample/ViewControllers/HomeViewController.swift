@@ -165,15 +165,9 @@ class HomeViewController: UIViewController {
         let buttonOne = CancelButton(title: "CANCEL") {
             print("You canceled the car dialog.")
         }
-        
-        // This button will not the dismiss the dialog
         let buttonTwo = DefaultButton(title: "LOGOUT", dismissOnTap: false) {
             print("What a beauty!")
         }
-    
-        // Add buttons to dialog
-        // Alternatively, you can use popup.addButton(buttonOne)
-        // to add a single button
         popup.addButtons([buttonOne, buttonTwo])
         
         // Present dialog

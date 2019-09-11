@@ -41,7 +41,7 @@ class TripsTableViewCell: UITableViewCell {
 //        
         originLabel?.text = trip.origin
         destinationLabel?.text = trip.destination
-        carLabel?.text = "Benz AMG - 63 coupé"
+        carLabel?.text = "GLC 200f"
         
         dateLabel.text = trip.getHoursAndMinutesFromDate()
         monthLabel.text = trip.getFormattedDate()
