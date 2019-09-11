@@ -14,6 +14,7 @@ import UIKit
 internal enum StoryboardSegue {
   internal enum Main: String, SegueType {
     case showDetail
+    case showDetailFromLive
     case showLiveView
     case showTrips
   }
