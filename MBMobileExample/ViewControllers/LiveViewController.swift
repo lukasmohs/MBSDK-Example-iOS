@@ -80,8 +80,9 @@ class LiveViewController: UIViewController {
                 return
             }
             DispatchQueue.main.async {
-                self.recommendationsStackView.removeArrangedSubview(lastRecommendationView)
-                lastRecommendationView.removeFromSuperview()
+                self.recommendationsStackView.subviews.last?.removeFromSuperview()
+//                self.recommendationsStackView.removeArrangedSubview(lastRecommendationView)
+//                lastRecommendationView.removeFromSuperview()
             }
             self.recommendationViews = recommendationViews.dropLast()
         }
