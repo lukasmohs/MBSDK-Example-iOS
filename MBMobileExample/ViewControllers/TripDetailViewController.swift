@@ -14,6 +14,8 @@ import MapKit
 class TripDetailViewController: UIViewController, MKMapViewDelegate {
     
     var trip: Trip?
+    
+    var polyLineScoreMap = [MKPolyline: Int] ()
 
     @IBOutlet weak var travelTimeLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -78,7 +80,7 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
     func addGradientView() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = gradientView.bounds
-        gradientLayer.colors = [UIColor.green.cgColor, UIColor.lightGray.cgColor]
+        gradientLayer.colors = [UIColor.green.cgColor, UIColor.red.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradientView.layer.insertSublayer(gradientLayer, at: 0)
@@ -111,6 +113,8 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
         points = [point1, point2]
         
         let geodesic = MKGeodesicPolyline(coordinates: points, count: 2)
+        
+        polyLineScoreMap[geodesic] = secondDataPoint.ecoScore.total
         mapView.addOverlay(geodesic)
     }
     
@@ -123,18 +127,19 @@ class TripDetailViewController: UIViewController, MKMapViewDelegate {
         // Create a specialized polyline renderer and set the polyline properties.
         let polylineRenderer = MKPolylineRenderer(overlay: polyline)
         
-        if let ecoScore = self.trip?.tripData.first(where: {$0.location.latitude  == polyline.points()[1].coordinate.latitude && $0.location.longitude  == polyline.points()[1].coordinate.longitude})?.ecoScore.total {
+        //$0.location.longitude  == polyline.points()[1].coordinate.longitude
+        if let ecoScore = polyLineScoreMap[polyline] {
             polylineRenderer.strokeColor = getColorForEcoScore(score: ecoScore)
         } else {
             polylineRenderer.strokeColor = UIColor.black
         }
         
-        polylineRenderer.lineWidth = 3
+        polylineRenderer.lineWidth = 5
         return polylineRenderer
     }
     
     func getColorForEcoScore(score: Int) -> UIColor{
-        let percentage: Double = Double(score / 2) / 100 + 50
-        return UIColor(red: 0, green: CGFloat(percentage), blue: 0, alpha: 1)
+        let percentage: Double = Double(score) / 100
+        return UIColor(red: CGFloat(1 - percentage), green: CGFloat(percentage), blue: 0, alpha: 1)
     }
 }
