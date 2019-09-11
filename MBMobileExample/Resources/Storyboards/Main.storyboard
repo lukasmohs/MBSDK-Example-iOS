@@ -227,8 +227,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="124km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-LN-EL5">
+                                <rect key="frame" x="16" y="42" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-If-KSU">
+                                <rect key="frame" x="262" y="42" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnq-kj-OAs">
+                                <rect key="frame" x="0.0" y="340" width="320" height="228"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oRL-nn-cFy" userLabel="RecommendationsStackView">
+                                        <rect key="frame" x="0.0" y="-5.5" width="320" height="239"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="239" id="t8q-aw-pol"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="oRL-nn-cFy" secondAttribute="trailing" id="DuE-CL-VqP"/>
+                                    <constraint firstItem="oRL-nn-cFy" firstAttribute="centerY" secondItem="jnq-kj-OAs" secondAttribute="centerY" id="SOP-N9-Wi5"/>
+                                    <constraint firstAttribute="bottom" secondItem="oRL-nn-cFy" secondAttribute="bottom" id="fQU-ko-A4J"/>
+                                    <constraint firstItem="oRL-nn-cFy" firstAttribute="leading" secondItem="jnq-kj-OAs" secondAttribute="leading" id="jmo-Nt-ZWV"/>
+                                    <constraint firstItem="oRL-nn-cFy" firstAttribute="centerX" secondItem="jnq-kj-OAs" secondAttribute="centerX" id="uLa-WC-4fs"/>
+                                </constraints>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJr-pK-kEz" customClass="ABGaugeView" customModule="ABGaugeViewKit">
-                                <rect key="frame" x="40" y="148" width="240" height="240"/>
+                                <rect key="frame" x="40" y="84" width="240" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Z5S-AH-Jai"/>
@@ -251,35 +283,31 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="blinkAnimate" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="124km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtW-LN-EL5">
-                                <rect key="frame" x="16" y="42" width="66" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-If-KSU">
-                                <rect key="frame" x="262" y="42" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="sJr-pK-kEz" firstAttribute="centerX" secondItem="ssc-yu-djY" secondAttribute="centerX" id="35F-Tw-si8"/>
-                            <constraint firstItem="sJr-pK-kEz" firstAttribute="top" secondItem="Pua-OR-T2Y" secondAttribute="top" constant="128" id="5si-FM-8Ov"/>
+                            <constraint firstItem="jnq-kj-OAs" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" id="B9G-mS-qlw"/>
+                            <constraint firstItem="jnq-kj-OAs" firstAttribute="bottom" secondItem="Pua-OR-T2Y" secondAttribute="bottom" id="IUp-85-UjE"/>
+                            <constraint firstItem="jnq-kj-OAs" firstAttribute="top" secondItem="sJr-pK-kEz" secondAttribute="bottom" constant="16" id="a2b-Is-Eaz"/>
+                            <constraint firstItem="jnq-kj-OAs" firstAttribute="leading" secondItem="Pua-OR-T2Y" secondAttribute="leading" id="bBz-Ss-2sj"/>
+                            <constraint firstItem="jnq-kj-OAs" firstAttribute="trailing" secondItem="Pua-OR-T2Y" secondAttribute="trailing" id="bzr-Wp-SMK"/>
+                            <constraint firstItem="sJr-pK-kEz" firstAttribute="top" secondItem="Pua-OR-T2Y" secondAttribute="top" constant="64" id="gmo-gx-btn"/>
+                            <constraint firstItem="Pua-OR-T2Y" firstAttribute="bottom" secondItem="jnq-kj-OAs" secondAttribute="bottom" id="gtC-5o-Ugv"/>
+                            <constraint firstItem="Pua-OR-T2Y" firstAttribute="trailing" secondItem="jnq-kj-OAs" secondAttribute="trailing" id="rAs-La-DkO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pua-OR-T2Y"/>
                     </view>
                     <connections>
+                        <outlet property="recommendationsStackView" destination="oRL-nn-cFy" id="6Ri-tf-FsI"/>
+                        <outlet property="scrollView" destination="jnq-kj-OAs" id="aJF-rD-FA3"/>
                         <outlet property="speedometerView" destination="sJr-pK-kEz" id="Qli-A6-VsK"/>
+                        <outlet property="stackViewHeightConstraint" destination="t8q-aw-pol" id="yJz-mE-pFJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhK-Rv-jHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="858"/>
+            <point key="canvasLocation" x="-56.25" y="857.74647887323943"/>
         </scene>
         <!--Recent Trips-->
         <scene sceneID="KUd-4q-ACf">

@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2713994D23282DA0002F0416 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2713994C23282DA0002F0416 /* GradientView.swift */; };
+		2761A7582328392B0002E088 /* RecommendationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2761A7572328392B0002E088 /* RecommendationView.xib */; };
 		27B31C542327CC0F00E95728 /* Speedometer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B31C532327CC0F00E95728 /* Speedometer.storyboard */; };
 		27D70BFA2327F82F0049940B /* BadgeCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D70BF82327F82F0049940B /* BadgeCard.xib */; };
 		27D70BFB2327F82F0049940B /* BadgeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D70BF92327F82F0049940B /* BadgeCard.swift */; };
+		27F4056323283817000010ED /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4056223283817000010ED /* RecommendationView.swift */; };
 		31579BBC2327C556005EC3EB /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31579BBB2327C556005EC3EB /* TripsViewController.swift */; };
 		31579BBE2327C7EB005EC3EB /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31579BBD2327C7EB005EC3EB /* LiveViewController.swift */; };
 		31740668232818DC009D1A12 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31740667232818DC009D1A12 /* TripsTableViewCell.swift */; };
@@ -47,9 +50,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2713994C23282DA0002F0416 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2761A7572328392B0002E088 /* RecommendationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationView.xib; sourceTree = "<group>"; };
 		27B31C532327CC0F00E95728 /* Speedometer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Speedometer.storyboard; sourceTree = "<group>"; };
 		27D70BF82327F82F0049940B /* BadgeCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeCard.xib; sourceTree = "<group>"; };
 		27D70BF92327F82F0049940B /* BadgeCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCard.swift; sourceTree = "<group>"; };
+		27F4056223283817000010ED /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
 		31579BBB2327C556005EC3EB /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		31579BBD2327C7EB005EC3EB /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		31740667232818DC009D1A12 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +129,9 @@
 				991B43322301AB68003D4B26 /* CommandDoorView.xib */,
 				991B432023018FFA003D4B26 /* ValueView.swift */,
 				991B432123018FFA003D4B26 /* ValueView.xib */,
+				2713994C23282DA0002F0416 /* GradientView.swift */,
+				27F4056223283817000010ED /* RecommendationView.swift */,
+				2761A7572328392B0002E088 /* RecommendationView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +327,7 @@
 				9926685C230154B00065BE53 /* Assets.xcassets in Resources */,
 				991B43282301A134003D4B26 /* Localizable.strings in Resources */,
 				9926686A2301562E0065BE53 /* Main.storyboard in Resources */,
+				2761A7582328392B0002E088 /* RecommendationView.xib in Resources */,
 				991B432C2301A13D003D4B26 /* InfoPlist.strings in Resources */,
 				991B432323018FFA003D4B26 /* ValueView.xib in Resources */,
 				27D70BFA2327F82F0049940B /* BadgeCard.xib in Resources */,
@@ -423,9 +433,11 @@
 				99266857230154AF0065BE53 /* HomeViewController.swift in Sources */,
 				99266855230154AF0065BE53 /* AppDelegate.swift in Sources */,
 				9926688023015F3F0065BE53 /* MBLoggerConfiguration.swift in Sources */,
+				2713994D23282DA0002F0416 /* GradientView.swift in Sources */,
 				31579BBC2327C556005EC3EB /* TripsViewController.swift in Sources */,
 				3174066E2328678F009D1A12 /* UIColor+Extension.swift in Sources */,
 				991B432223018FFA003D4B26 /* ValueView.swift in Sources */,
+				27F4056323283817000010ED /* RecommendationView.swift in Sources */,
 				9926686E2301567F0065BE53 /* Scenes.swift in Sources */,
 				9926687A23015EFB0065BE53 /* MenuDataSource.swift in Sources */,
 				EA20145B2327E8F8008622EC /* BadgeCard.swift in Sources */,
@@ -585,7 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4X7Z6AL43R;
+				DEVELOPMENT_TEAM = 9FD38958WM;
 				INFOPLIST_FILE = MBMobileExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -607,7 +619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4X7Z6AL43R;
+				DEVELOPMENT_TEAM = 9FD38958WM;
 				INFOPLIST_FILE = MBMobileExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

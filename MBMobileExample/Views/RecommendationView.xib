@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendationView" customModule="MBMobileExample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="xgz-oa-3cI">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce acceleration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNW-X4-SXL">
+                            <rect key="frame" x="8" y="16" width="234" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="VNW-X4-SXL" firstAttribute="top" secondItem="xgz-oa-3cI" secondAttribute="top" constant="16" id="2wu-Cn-d3G"/>
+                        <constraint firstAttribute="trailing" secondItem="VNW-X4-SXL" secondAttribute="trailing" constant="8" id="OOO-Q6-BXC"/>
+                        <constraint firstItem="VNW-X4-SXL" firstAttribute="leading" secondItem="xgz-oa-3cI" secondAttribute="leading" constant="8" id="SMo-c6-Pre"/>
+                        <constraint firstAttribute="bottom" secondItem="VNW-X4-SXL" secondAttribute="bottom" constant="16" id="aK3-Nk-KAu"/>
+                        <constraint firstItem="VNW-X4-SXL" firstAttribute="centerX" secondItem="xgz-oa-3cI" secondAttribute="centerX" id="pv1-rC-Gtf"/>
+                        <constraint firstItem="VNW-X4-SXL" firstAttribute="centerY" secondItem="xgz-oa-3cI" secondAttribute="centerY" id="sNE-k7-Pza"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xgz-oa-3cI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0vb-Kh-0gD"/>
+                <constraint firstItem="xgz-oa-3cI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FwH-j3-N0r"/>
+                <constraint firstItem="xgz-oa-3cI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="keL-Qb-MSk"/>
+                <constraint firstAttribute="bottom" secondItem="xgz-oa-3cI" secondAttribute="bottom" id="xve-O4-1Xh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="recommendationBackgroundView" destination="xgz-oa-3cI" id="sb4-e1-qOW"/>
+                <outlet property="recommendationText" destination="VNW-X4-SXL" id="n8g-VS-mkl"/>
+            </connections>
+            <point key="canvasLocation" x="-68.115942028985515" y="-247.76785714285714"/>
+        </view>
+    </objects>
+</document>

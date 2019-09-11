@@ -116,7 +116,6 @@ class HomeViewController: UIViewController {
         view5.badgeName.text = "Competitor"
         badgeStackView.addArrangedSubview(view5)
         
-        
         let spacerView = UIView()
         spacerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
         badgeStackView.addArrangedSubview(spacerView)

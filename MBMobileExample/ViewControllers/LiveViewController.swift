@@ -16,8 +16,15 @@ class LiveViewController: UIViewController {
 
     private var disposal = Disposal()
     private var token: MyCarSocketNotificationToken?
-    
+    @IBOutlet weak var scrollView: UIScrollView!
+
+    @IBOutlet weak var recommendationsStackView: UIStackView!
     @IBOutlet weak var speedometerView: ABGaugeView!
+
+    @IBOutlet weak var stackViewHeightConstraint: NSLayoutConstraint!
+
+    var previousEcoScore: VehicleEcoScoreModel?
+    var recommendationViews: [UIView] = []
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,6 +35,66 @@ class LiveViewController: UIViewController {
         Notification.Name.didChangeVehicleSelection.add(self, selector: #selector(self.didChangeVehicleSelection(notification:)))
         self.observeVehicleStatus()
         self.didChangeVehicleSelection(notification: nil)
+        self.addRecommendationsToView()
+    }
+
+    func addRecommendationsToView() {
+        recommendationsStackView.axis = .vertical
+        recommendationsStackView.alignment = .center
+        recommendationsStackView.distribution = .equalSpacing
+        recommendationsStackView.spacing = 2
+
+        stackViewHeightConstraint.constant += CGFloat(3 * 20)
+
+        let recommendationView1 = RecommendationView.instanceFromNib() as! RecommendationView
+        recommendationView1.recommendationText.text = "Break earlier!"
+        recommendationView1.recommendationBackgroundView.layer.cornerRadius = 5;
+        recommendationView1.recommendationBackgroundView.layer.masksToBounds = true;
+        recommendationsStackView.addArrangedSubview(recommendationView1)
+
+        let recommendationView2 = RecommendationView.instanceFromNib() as! RecommendationView
+        recommendationView2.recommendationText.text = "Accelerate!"
+        recommendationView2.recommendationBackgroundView.layer.cornerRadius = 5;
+        recommendationView2.recommendationBackgroundView.layer.masksToBounds = true;
+        recommendationsStackView.addArrangedSubview(recommendationView2)
+
+        let recommendationView3 = RecommendationView.instanceFromNib() as! RecommendationView
+        recommendationView3.recommendationText.text = "Drive slower!"
+        recommendationView3.recommendationBackgroundView.layer.cornerRadius = 5;
+        recommendationView3.recommendationBackgroundView.layer.masksToBounds = true;
+        recommendationsStackView.addArrangedSubview(recommendationView3)
+
+        recommendationViews.append(recommendationView1)
+        recommendationViews.append(recommendationView2)
+        recommendationViews.append(recommendationView3)
+        //recommendationView1.isHidden = true
+
+        let spacerView = UIView()
+        spacerView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        recommendationsStackView.addArrangedSubview(spacerView)
+    }
+
+    func createRecommendationView(text: String) {
+        if recommendationViews.count >= 4 {
+            guard let lastRecommendationView = recommendationViews.last else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.recommendationsStackView.removeArrangedSubview(lastRecommendationView)
+                lastRecommendationView.removeFromSuperview()
+            }
+            self.recommendationViews = recommendationViews.dropLast()
+        }
+        let recommendationView = RecommendationView.instanceFromNib() as! RecommendationView
+        recommendationView.recommendationText.text = text
+        recommendationView.recommendationBackgroundView.layer.cornerRadius = 5;
+        recommendationView.recommendationBackgroundView.layer.masksToBounds = true;
+        recommendationsStackView.addArrangedSubview(recommendationView)
+        self.recommendationViews.append(recommendationView)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
 
     deinit {
@@ -53,6 +120,21 @@ class LiveViewController: UIViewController {
                 self?.speedometerView.needleValue = CGFloat(ecoScoreTotalValue)
                 let location = socketObservable.location.current
                 DataHandler.shared.addNewDataPoint(location: location, ecoScore: ecoScore)
+                guard let ecoScoreAccel = ecoScore.accel.value else {
+                    return
+                }
+                if ecoScoreAccel < 20 {
+                    self?.createRecommendationView(text: "Drive slower!")
+                }
+                guard let ecoScoreConst = ecoScore.const.value else {
+                    return
+                }
+                if ecoScoreConst < 20 {
+                    self?.createRecommendationView(text: "More predicitive driving!")
+                }
+                guard let ecoScoreFreeWhl = ecoScore.freeWhl.value else {
+                    return
+                }
             case .initial(let ecoScore):
                 guard let ecoScoreTotalValue = ecoScore.total.value else {
                     return
@@ -61,6 +143,7 @@ class LiveViewController: UIViewController {
                 self?.speedometerView.needleValue = CGFloat(ecoScoreTotalValue)
                 let location = socketObservable.location.current
                 DataHandler.shared.addNewDataPoint(location: location, ecoScore: ecoScore)
+                self?.previousEcoScore = ecoScore
             }
         }.add(to: &self.disposal)
 
@@ -120,3 +203,4 @@ class LiveViewController: UIViewController {
         }
     }
 }
+
